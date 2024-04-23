@@ -23,20 +23,22 @@ https://online-banking-website-omega.vercel.app/
 \* HomePage
 
 - Bank Background
-- Feature Set
+- Feature Set(Link to each page)
 
 \* CardPage
 
-- Apply Credit Card(form, Airtable, CUD, input validation)
+- Apply for Credit Card
+- Form([Name, Birthdate, IC No.]; CREATE/UPDATE/DELETE; data store in Airtable; input validation; submit form)
+- Check submitted record(lifting state?)
 
 \* NewsPage
 
-- Latest News(API)
+- Latest News(fetch from API)
   https://api.marketdata.app/v1/stocks/news/AAPL/?dateformat=timestamp&limit=2
 
 \* StocksPage
 
-- Latest Price(API)
+- Latest Price(fetch from API)
   https://api.marketdata.app/v1/stocks/quotes/AAPL/?dateformat=timestamp
 
 ## Trello
@@ -48,3 +50,8 @@ https://trello.com/invite/b/btJqDKyi/ATTI389e3539f235535c56f0b3ebe256a519BCA9345
 - Stores: cards application information(CREATE, UPDATE, DELETE)
 
 ## Bruno??
+
+## Future
+
+- Financial Goal Calculator
+- Foreign Exchange(fetch latest rate from API)

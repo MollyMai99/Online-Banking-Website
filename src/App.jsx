@@ -1,6 +1,7 @@
 import HomePage from "./HomePage/HomePage";
 import CardPage from "./CardPage/CardPage";
 import NewsPage from "./NewsPage/NewsPage";
+import StocksPage from "./StocksPage/StocksPage";
 
 function App() {
   // const [count, setCount] = useState(0);
@@ -25,7 +26,7 @@ function App() {
       <HomePage />
       <CardPage />
       <NewsPage />
-      <p>StocksPage</p>
+      <StocksPage />
     </>
   );
 }

@@ -1,8 +1,13 @@
+# Online-Banking-Website
+
+## Introduction
+
 ## API
 
 https://api.marketdata.app/
 
 URL
+
 https://api.marketdata.app/v1/stocks/quotes/AAPL
 https://api.marketdata.app/v1/stocks/quotes/AAPL/?dateformat=timestamp
 https://api.marketdata.app/v1/stocks/news/AAPL/?dateformat=timestamp&limit=2
@@ -15,21 +20,21 @@ https://online-banking-website-omega.vercel.app/
 
 ## Wireframe
 
-% HomePage
+\* HomePage
 
 - Bank Background
 - Feature Set
 
-% CardPage
+\* CardPage
 
 - Apply Credit Card(form, Airtable, CUD, input validation)
 
-% NewsPage
+\* NewsPage
 
 - Latest News(API)
   https://api.marketdata.app/v1/stocks/news/AAPL/?dateformat=timestamp&limit=2
 
-% StocksPage
+\* StocksPage
 
 - Latest Price(API)
   https://api.marketdata.app/v1/stocks/quotes/AAPL/?dateformat=timestamp

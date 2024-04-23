@@ -1,7 +1,7 @@
 import HomePage from "./HomePage/HomePage";
-import CardPage from "./CardPage/CardPage";
-import NewsPage from "./NewsPage/NewsPage";
 import StocksPage from "./StocksPage/StocksPage";
+// import CardPage from "./CardPage/CardPage";
+// import NewsPage from "./NewsPage/NewsPage";
 
 function App() {
   // const [count, setCount] = useState(0);
@@ -25,8 +25,8 @@ function App() {
       <h1>BBS</h1>
       <HomePage />
       <StocksPage />
-      <CardPage />
-      <NewsPage />
+      {/* <CardPage />
+      <NewsPage /> */}
     </>
   );
 }

@@ -1,4 +1,6 @@
 import { useEffect } from "react";
+import SavedStocksPage from "./SavedStocksPage";
+import TopStocksPage from "./TopStocksPage";
 
 export default function StocksPage() {
   useEffect(() => {
@@ -24,28 +26,8 @@ export default function StocksPage() {
     <>
       <h1>Stocks</h1>
       <p>Navbar</p>
-      <p>Top 10 Popular Stocks</p>
-      <ul>
-        <li>
-          AAPL
-          <button>Save</button>
-        </li>
-        <li>
-          NVDA
-          <button>Save</button>
-        </li>
-        <li>
-          TSLA
-          <button>Save</button>
-        </li>
-      </ul>
-      <p>Saved Stocks</p>
-      <ul>
-        <li>
-          AAPL
-          <button>Saved</button>
-        </li>
-      </ul>
+      <TopStocksPage />
+      <SavedStocksPage />
     </>
   );
 }

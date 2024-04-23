@@ -22,12 +22,29 @@ export default function StocksPage() {
 
   return (
     <>
-      <h1>Latest Stocks Price</h1>
+      <h1>Stocks</h1>
       <p>Navbar</p>
+      <p>Top 10 Popular Stocks</p>
       <ul>
-        <li>AAPL</li>
-        <li>Price</li>
-        <li>Time</li>
+        <li>
+          AAPL
+          <button>Save</button>
+        </li>
+        <li>
+          NVDA
+          <button>Save</button>
+        </li>
+        <li>
+          TSLA
+          <button>Save</button>
+        </li>
+      </ul>
+      <p>Saved Stocks</p>
+      <ul>
+        <li>
+          AAPL
+          <button>Saved</button>
+        </li>
       </ul>
     </>
   );

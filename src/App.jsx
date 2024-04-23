@@ -24,9 +24,9 @@ function App() {
     <>
       <h1>BBS</h1>
       <HomePage />
+      <StocksPage />
       <CardPage />
       <NewsPage />
-      <StocksPage />
     </>
   );
 }

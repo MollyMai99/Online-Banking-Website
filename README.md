@@ -3,6 +3,71 @@
 ## Introduction
 
 An online banking web APP using React.
+
+## Getting Started (Vercel)
+
+https://online-banking-website-omega.vercel.app/
+
+## User Stories
+
+- As a user, I can learn the background of the bank through homepage;
+- As a user, I can click into the page I want on homepage;
+
+- As a user, I can check the latest price of one specific stock on StocksPage;
+
+- As a user, I can apply for a credit card on CardPAge by filling the form;
+- As a user, I can check the submitted form and am able update or delete the record on CardPAge.
+
+- As a user, I can check the latest news of one specific stock on NewsPage;
+
+## API
+
+https://api.stockdata.org/v1/data/quote?symbols=AAPL&api_token=jpqEm77zS2gsDoy1tifSsrgMvvpw3XS2zl6HHf2V
+
+## Wireframe
+
+\* HomePage
+
+- Bank Background
+- Feature Set(Link to each page)
+
+\* StocksPage
+
+- Navbar (Router)
+
+- TopStocksPage
+  Top 10 Popular Stocks (Airtable -> store 10 stocks)
+  Each stock can click to save/unsave (Airtable -> store saved stocks)
+  Each stock can click to check lates price -> StockDetailPage (API, Lifting States)
+
+- SavedStocksPage
+
+## Trello
+
+https://trello.com/invite/b/btJqDKyi/ATTI389e3539f235535c56f0b3ebe256a519BCA9345F/online-banking-website
+
+## Airtable
+
+- Stores:
+
+## Bruno
+
+## Screenshots
+
+## Technologies Used
+
+## Next Steps
+
+- Financial Goal Calculator
+- Foreign Exchange(fetch latest rate from API)
+
+------------------BACK UP README-----------------------------
+
+# Online-Banking-Website
+
+## Introduction
+
+An online banking web APP using React.
 Our app allows users to learn the background of the bank, apply for credit cards, check latest news and stocks price.
 
 ## Getting Started (Vercel)

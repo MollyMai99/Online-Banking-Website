@@ -2,6 +2,9 @@
 
 ## Introduction
 
+An online banking web APP using React.
+Our app allows users to learn the background of the bank, apply for credit cards, check latest news and stocks price.
+
 ## API
 
 https://api.marketdata.app/
@@ -18,6 +21,16 @@ https://online-banking-website-omega.vercel.app/
 
 ## User Stories
 
+- As a user, I can learn the background of the bank through homepage;
+- As a user, I can click into the page I want on homepage;
+
+- As a user, I can apply for a credit card on CardPAge by filling the form;
+- As a user, I can check the submitted form and am able update or delete the record.
+
+- As a user, I can check the latest news of one specific stock on NewsPage;
+
+- As a user, I can check the latest price of one specific stock on StocksPage;
+
 ## Wireframe
 
 \* HomePage
@@ -29,7 +42,7 @@ https://online-banking-website-omega.vercel.app/
 
 - Apply for Credit Card
 - Form([Name, Birthdate, IC No.]; CREATE/UPDATE/DELETE; data store in Airtable; input validation; submit form)
-- Check submitted record(lifting state?)
+- Check Submitted Record(lifting state?)
 
 \* NewsPage
 

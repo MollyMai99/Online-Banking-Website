@@ -1,5 +1,6 @@
 // import { useEffect } from "react";
 import HomePage from "./HomePage/HomePage";
+import CardPage from "./CardPage/CardPage";
 
 function App() {
   // const [count, setCount] = useState(0);
@@ -22,6 +23,7 @@ function App() {
     <>
       <h1>BBS</h1>
       <HomePage />
+      <CardPage />
       <p>CardPage</p>
       <p>NewsPage</p>
       <p>StocksPage</p>

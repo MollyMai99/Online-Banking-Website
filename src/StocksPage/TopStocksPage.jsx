@@ -1,3 +1,5 @@
+import StockDetailPage from "./StockDetailPage";
+
 export default function TopStocksPage() {
   return (
     <>
@@ -6,6 +8,7 @@ export default function TopStocksPage() {
         <li>
           AAPL
           <button>Save</button>
+          <StockDetailPage />
         </li>
         <li>
           NVDA

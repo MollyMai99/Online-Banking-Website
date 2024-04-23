@@ -22,7 +22,7 @@ https://online-banking-website-omega.vercel.app/
 
 ## API
 
-https://api.stockdata.org/v1/data/quote?symbols=AAPL&api_token=jpqEm77zS2gsDoy1tifSsrgMvvpw3XS2zl6HHf2V
+https://api.stockdata.org/v1/data/quote?symbols=AAPL&api_token=
 
 ## Wireframe
 

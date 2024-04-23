@@ -17,7 +17,16 @@ function App() {
     logMovies();
   }, []);
 
-  return <>HI</>;
+  return (
+    <>
+      <h1>BBS</h1>
+      <p>Bank Background</p>
+      <p>Feature Set(Link to each page)</p>
+      <p>CardPage</p>
+      <p>NewsPage</p>
+      <p>StocksPage</p>
+    </>
+  );
 }
 
 export default App;

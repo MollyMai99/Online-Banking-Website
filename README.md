@@ -40,20 +40,20 @@ https://api.marketdata.app/v1/stocks/news/AAPL/?dateformat=timestamp&limit=2
 
 \* CardPage
 
-- Narvbar
+- Navbar
 - Apply for Credit Card
 - Form([Name, Birthdate, IC No.]; CREATE/UPDATE/DELETE; data store in Airtable; input validation; submit form)
 - Check Submitted Record(lifting state?)
 
 \* NewsPage
 
-- Narvbar
+- Navbar
 - Latest News(fetch from API)
   https://api.marketdata.app/v1/stocks/news/AAPL/?dateformat=timestamp&limit=2
 
 \* StocksPage
 
-- Narvbar
+- Navbar
 - Latest Price(fetch from API)
   https://api.marketdata.app/v1/stocks/quotes/AAPL/?dateformat=timestamp
 

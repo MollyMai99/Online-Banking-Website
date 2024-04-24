@@ -1,7 +1,6 @@
+import { Route, Routes } from "react-router-dom";
 import HomePage from "./Pages/HomePage/HomePage";
 import StocksPage from "./Pages/StocksPage";
-// import CardPage from "./CardPage/CardPage";
-// import NewsPage from "./NewsPage/NewsPage";
 
 function App() {
   // const [count, setCount] = useState(0);
@@ -9,10 +8,12 @@ function App() {
   return (
     <>
       <h1>BBS</h1>
-      <HomePage />
-      <StocksPage />
-      {/* <CardPage />
-      <NewsPage /> */}
+      {/* <HomePage />
+      <StocksPage /> */}
+      <Routes>
+        <Route path="/home" element={<HomePage />} />
+        <Route path="/stocks/AAPL" element={<StocksPage />} />
+      </Routes>
     </>
   );
 }

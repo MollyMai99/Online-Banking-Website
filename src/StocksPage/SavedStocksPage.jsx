@@ -1,11 +1,11 @@
 export default function SavedStocksPage() {
   return (
     <>
-      <p>Saved Stocks</p>
+      <p>SavedStocksPage</p>
       <ul>
         <li>
           AAPL
-          <button>Saved</button>
+          <button>Unsave</button>
         </li>
       </ul>
     </>

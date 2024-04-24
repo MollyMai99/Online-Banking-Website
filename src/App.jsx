@@ -9,6 +9,7 @@ function App() {
   return (
     <>
       <h1>BBS</h1>
+      <p>Navbar</p>
       <Routes>
         <Route path="/home" element={<HomePage />} />
         <Route path="/stocks" element={<StocksPage />} />

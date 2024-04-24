@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 export default function StockDetailPage() {
   const [stock, setStock] = useState([]);
@@ -36,7 +37,9 @@ export default function StockDetailPage() {
         <li>Last Tarde Time: {stock.last_trade_time}</li>
       </ul>
       <button>Save</button>
-      <button>back</button>
+      <button>
+        <Link to={`/stocks`}>back</Link>
+      </button>
       <hr />
     </>
   );

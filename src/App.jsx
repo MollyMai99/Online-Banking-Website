@@ -1,5 +1,5 @@
 import HomePage from "./Pages/HomePage/HomePage";
-import StocksPage from "./Pages/StocksPage/StocksPage";
+import StocksPage from "./Pages/StocksPage";
 // import CardPage from "./CardPage/CardPage";
 // import NewsPage from "./NewsPage/NewsPage";
 

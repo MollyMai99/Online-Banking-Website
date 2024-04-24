@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import SavedStocksPage from "./SavedStocksPage";
-import TopStocksPage from "./TopStocksPage";
+import SavedStocksPage from "./StocksPage/SavedStocksPage";
+import TopStocksPage from "./StocksPage/TopStocksPage";
 
 export default function StocksPage() {
   const [stocks, setStock] = useState([]);

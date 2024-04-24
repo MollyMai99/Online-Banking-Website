@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import SavedStocksPage from "./StocksPage/SavedStocksPage";
+// import SavedStocksPage from "./StocksPage/SavedStocksPage";
 import TopStocksPage from "./StocksPage/TopStocksPage";
 
 export default function StocksPage() {
@@ -17,7 +17,7 @@ export default function StocksPage() {
       const data = await response.json();
       const stocksData = data.data;
       setStock(stocksData);
-      console.log("1", stocks);
+      // console.log("1", stocks);
     }
     loadStocks();
   }, []);
@@ -27,7 +27,7 @@ export default function StocksPage() {
       <h1>StocksPage</h1>
       <p>Navbar</p>
       <TopStocksPage stocks={stocks} />
-      <SavedStocksPage />
+      {/* <SavedStocksPage /> */}
     </>
   );
 }

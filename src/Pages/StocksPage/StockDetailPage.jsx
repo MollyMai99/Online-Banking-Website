@@ -1,4 +1,4 @@
-export default function StockDetailPage() {
+export default function StockDetailPage({ stocks }) {
   return (
     <>
       <hr />

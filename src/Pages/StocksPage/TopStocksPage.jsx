@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import StockDetailPage from "./StockDetailPage";
+// import StockDetailPage from "./StockDetailPage";
 
 export default function TopStocksPage({ stocks }) {
   //   console.log("top", stocks);
@@ -34,7 +34,7 @@ export default function TopStocksPage({ stocks }) {
           ))}
         </tbody>
       </table>
-      <StockDetailPage />
+      {/* <StockDetailPage /> */}
     </>
   );
 }

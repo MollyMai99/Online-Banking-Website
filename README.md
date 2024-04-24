@@ -36,9 +36,11 @@ https://api.stockdata.org/v1/data/quote?symbols=AAPL&api_token=
 - Navbar (Router)
 
 - TopStocksPage
-  Top 10 Popular Stocks (Airtable -> store 10 stocks)
-  Each stock can click to save/unsave (Airtable -> store saved stocks)
-  Each stock can click to check lates price -> StockDetailPage (API, Lifting States)
+  Top 3 Popular Stocks (Airtable -> store 3 stocks)
+  Stock name -> link to StockDetailPage (API, Lifting States)
+  Save Button -> save/unsave (Airtable -> store saved stocks)
+
+- StockDetailPage
 
 - SavedStocksPage
 

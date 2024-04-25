@@ -13,6 +13,9 @@ export default function Navbar() {
         <li>
           <Link to={`/stocks`}>Top 3 Popular Stocks</Link>
         </li>
+        <li>
+          <Link to={`/savedstocks`}>Saved Stocks</Link>
+        </li>
       </ul>
     </>
   );

@@ -7,11 +7,11 @@ export default function StockDetailPage() {
   useEffect(() => {
     async function loadStock() {
       const response = await fetch(
-        "https://api.marketdata.app/v1/stocks/quotes/AAPL"
+        // "https://api.marketdata.app/v1/stocks/quotes/AAPL"
         // "https://api.stockdata.org/v1/data/quote?symbols=AAPL,TSLA,MSFT&api_token=jpqEm77zS2gsDoy1tifSsrgMvvpw3XS2zl6HHf2V"
 
         // "https://api.stockdata.org/v1/data/quote?symbols=AAPL&api_token=jpqEm77zS2gsDoy1tifSsrgMvvpw3XS2zl6HHf2V"
-        // ("https://api.stockdata.org/v1/data/quote?symbols=AAPL&api_token=JgOAADvWjnurMD8QLuMAkLF5XlL7pD8jQUMCqXlC");
+        "https://api.stockdata.org/v1/data/quote?symbols=AAPL&api_token=JgOAADvWjnurMD8QLuMAkLF5XlL7pD8jQUMCqXlC"
         // "https://api.stockdata.org/v1/data/quote?symbols=AAPL&api_token=SQ6IJwKFCd5COSkR2TSgYxA4RCV0fzStMaVwPFSB"
       );
 
@@ -38,11 +38,10 @@ export default function StockDetailPage() {
         <li>Volume: {stock.volume}</li>
         <li>Last Tarde Time: {stock.last_trade_time}</li>
       </ul>
-      <button>Save</button>
+      <button>Click to Save</button>
       <button>
         <Link to={`/stocks`}>back</Link>
       </button>
-      <hr />
     </>
   );
 }

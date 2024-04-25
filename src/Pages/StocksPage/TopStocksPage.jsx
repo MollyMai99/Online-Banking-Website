@@ -27,9 +27,7 @@ export default function TopStocksPage({ stocks }) {
               <td>{stock.currency}</td>
               <td>{stock.price}</td>
               <td>{stock.last_trade_time}</td>
-              <td>
-                <button>Save</button>
-              </td>
+              <td>❤️</td>
             </tr>
           ))}
         </tbody>

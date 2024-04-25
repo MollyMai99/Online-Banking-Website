@@ -2,14 +2,14 @@ import { Route, Routes } from "react-router-dom";
 import HomePage from "./Pages/HomePage/HomePage";
 import StocksPage from "./Pages/StocksPage";
 import StockDetailPage from "./Pages/StocksPage/StockDetailPage";
+import Navbar from "./Navbar";
 
 function App() {
   // const [count, setCount] = useState(0);
 
   return (
     <>
-      <h1>BBS</h1>
-      <p>Navbar</p>
+      <Navbar />
       <Routes>
         <Route path="/home" element={<HomePage />} />
         <Route path="/stocks" element={<StocksPage />} />

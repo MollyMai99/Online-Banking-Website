@@ -23,6 +23,14 @@ export default function StockDetailPage() {
     loadStock();
   }, []);
 
+  // function handleSave() {
+  //   console.log("click to save");
+  // }
+
+  const handleSave = () => async () => {
+    console.log("click to save");
+  };
+
   return (
     <>
       <hr />
@@ -38,7 +46,7 @@ export default function StockDetailPage() {
         <li>Volume: {stock.volume}</li>
         <li>Last Tarde Time: {stock.last_trade_time}</li>
       </ul>
-      <button>Click to Save</button>
+      <button onClick={handleSave()}>Click to Save</button>
       <button>
         <Link to={`/stocks`}>back</Link>
       </button>

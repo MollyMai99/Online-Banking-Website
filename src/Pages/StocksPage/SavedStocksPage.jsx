@@ -44,7 +44,7 @@ export default function SavedStocksPage() {
       const response = await fetch(url, options);
       const airtableResponse = await response.json();
       const savedList = airtableResponse.records;
-      // console.log(airtableResponse);
+      console.log(airtableResponse);
       setSavedList(savedList);
       console.log(savedList);
     }

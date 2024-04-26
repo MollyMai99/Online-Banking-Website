@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
 export default function StockDetailPage() {
   const [stock, setStock] = useState([]);
+  const { symbol } = useParams();
 
   useEffect(() => {
     async function loadStock() {
@@ -12,7 +13,7 @@ export default function StockDetailPage() {
 
         // "https://api.stockdata.org/v1/data/quote?symbols=AAPL&api_token=jpqEm77zS2gsDoy1tifSsrgMvvpw3XS2zl6HHf2V"
         // "https://api.stockdata.org/v1/data/quote?symbols=AMZN&api_token=JgOAADvWjnurMD8QLuMAkLF5XlL7pD8jQUMCqXlC"
-        "https://api.stockdata.org/v1/data/quote?symbols=AAPL&api_token=SQ6IJwKFCd5COSkR2TSgYxA4RCV0fzStMaVwPFSB"
+        `https://api.stockdata.org/v1/data/quote?symbols=${symbol}&api_token=SQ6IJwKFCd5COSkR2TSgYxA4RCV0fzStMaVwPFSB`
       );
 
       const data = await response.json();
@@ -21,7 +22,7 @@ export default function StockDetailPage() {
       // console.log("1", stock);
     }
     loadStock();
-  }, []);
+  }, [symbol]);
 
   // function handleSave() {
   //   console.log("click to save");

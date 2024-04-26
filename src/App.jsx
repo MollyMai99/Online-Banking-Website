@@ -14,7 +14,7 @@ function App() {
       <Routes>
         <Route path="/home" element={<HomePage />} />
         <Route path="/stocks" element={<StocksPage />} />
-        <Route path="/stocks/AAPL" element={<StockDetailPage />} />
+        <Route path="/stocks/:symbol" element={<StockDetailPage />} />
         <Route path="/savedstocks" element={<SavedStocksPage />} />
       </Routes>
     </>

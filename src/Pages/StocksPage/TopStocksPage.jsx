@@ -1,10 +1,18 @@
 import { Link } from "react-router-dom";
 import popularStocksList from "../../popularStocksList";
+import { useState } from "react";
 // import StockDetailPage from "./StockDetailPage";
 
 export default function TopStocksPage() {
   //   console.log("top", stocks);
-  console.log("1", popularStocksList[0].symbol);
+  // console.log("1", popularStocksList[0].symbol);
+  const [symbol, setSymbol] = useState("");
+  // setSymbol("AAPL");
+
+  async function getSymbol(symbol) {
+    setSymbol(symbol);
+    console.log(symbol);
+  }
 
   return (
     <>
@@ -19,7 +27,12 @@ export default function TopStocksPage() {
           {popularStocksList.map((popularStock) => (
             <tr key={popularStock.symbol}>
               <td>
-                <Link to={`/stocks/AAPL`}>{popularStock.symbol}</Link>
+                <Link
+                  to={`/stocks/${popularStock.symbol}`}
+                  onClick={() => getSymbol(popularStock.symbol)}
+                >
+                  {popularStock.symbol}
+                </Link>
               </td>
               <td>{popularStock.company_name}</td>
             </tr>

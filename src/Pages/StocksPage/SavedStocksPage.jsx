@@ -53,12 +53,15 @@ export default function SavedStocksPage() {
   return (
     <>
       <p>SavedStocksPage</p>
-      <ul>
-        <li>
-          {/* {savedList[0].fields.Symbol} */}
-          <button>Unsave</button>
-        </li>
-      </ul>
+
+      {savedList.map((savedStock) => (
+        <ul key={savedStock.fields.Symbol}>
+          <li>
+            {savedStock.fields.Symbol}
+            <button>Unsave</button>
+          </li>
+        </ul>
+      ))}
     </>
   );
 }

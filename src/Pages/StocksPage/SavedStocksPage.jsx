@@ -51,8 +51,22 @@ export default function SavedStocksPage() {
     loadSavedList();
   }, []);
 
-  async function deleteSaveList(symbol) {
-    console.log("unsave");
+  async function deleteStock(id) {
+    console.log(id);
+
+    const url = `https://api.airtable.com/v0/appu6JDxJ0kPqISCM/Table%201/${id}`;
+    const key =
+      "patc1K5wmYJTJIkjP.febf10fd5d52335a34877cd8e8eb742c0d247d1e0e9b86fc70259d7a20c4e076";
+
+    const options = {
+      method: "DELETE",
+      headers: {
+        Authorization: `Bearer ${key}`,
+        "Content-Type": "application/json",
+      },
+    };
+    const response = await fetch(url, options);
+    await response.json();
   }
 
   return (
@@ -64,9 +78,7 @@ export default function SavedStocksPage() {
             <Link to={`/stocks/${savedStock.fields.Symbol}`}>
               {savedStock.fields.Symbol}
             </Link>
-            <button onClick={() => deleteSaveList(savedStock.fields.Symbol)}>
-              Unsave
-            </button>
+            <button onClick={() => deleteStock(savedStock.id)}>Unsave</button>
           </li>
         </ul>
       ))}

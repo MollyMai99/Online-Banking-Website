@@ -61,7 +61,9 @@ export default function SavedStocksPage() {
       {savedList.map((savedStock) => (
         <ul key={savedStock.fields.Symbol}>
           <li>
-            <Link to={`/stocks/AAPL`}>{savedStock.fields.Symbol}</Link>
+            <Link to={`/stocks/${savedStock.fields.Symbol}`}>
+              {savedStock.fields.Symbol}
+            </Link>
             <button onClick={handleUnsave()}>Unsave</button>
           </li>
         </ul>

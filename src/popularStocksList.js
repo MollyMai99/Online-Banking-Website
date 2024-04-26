@@ -36,8 +36,8 @@ const popularStocksList = [
   },
   {
     rank: 8,
-    company_name: "Facebook, Inc.",
-    symbol: "FB",
+    company_name: "PayPal Holdings, Inc.",
+    symbol: "PYPL",
   },
   {
     rank: 9,
@@ -158,11 +158,6 @@ const popularStocksList = [
     rank: 32,
     company_name: "Intel Corporation",
     symbol: "INTC",
-  },
-  {
-    rank: 33,
-    company_name: "PayPal Holdings, Inc.",
-    symbol: "PYPL",
   },
 ];
 

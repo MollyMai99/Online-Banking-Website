@@ -51,9 +51,9 @@ export default function SavedStocksPage() {
     loadSavedList();
   }, []);
 
-  const handleUnsave = () => async () => {
+  async function deleteSaveList(symbol) {
     console.log("unsave");
-  };
+  }
 
   return (
     <>
@@ -64,7 +64,9 @@ export default function SavedStocksPage() {
             <Link to={`/stocks/${savedStock.fields.Symbol}`}>
               {savedStock.fields.Symbol}
             </Link>
-            <button onClick={handleUnsave()}>Unsave</button>
+            <button onClick={() => deleteSaveList(savedStock.fields.Symbol)}>
+              Unsave
+            </button>
           </li>
         </ul>
       ))}

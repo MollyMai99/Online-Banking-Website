@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 export default function SavedStocksPage() {
   // const fetchAirtable = async () => {
@@ -60,7 +61,7 @@ export default function SavedStocksPage() {
       {savedList.map((savedStock) => (
         <ul key={savedStock.fields.Symbol}>
           <li>
-            {savedStock.fields.Symbol}
+            <Link to={`/stocks/AAPL`}>{savedStock.fields.Symbol}</Link>
             <button onClick={handleUnsave()}>Unsave</button>
           </li>
         </ul>

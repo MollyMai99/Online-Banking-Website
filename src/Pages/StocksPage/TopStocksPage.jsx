@@ -13,7 +13,7 @@ export default function TopStocksPage({ stocks }) {
             <th>Symbol</th>
             <th>Currency</th>
             <th>Price</th>
-            <th>Last Tarde Time</th>
+            <th>Last Trade Time</th>
             <th>Save</th>
           </tr>
         </thead>

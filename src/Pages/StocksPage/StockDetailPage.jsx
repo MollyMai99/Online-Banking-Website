@@ -44,7 +44,7 @@ export default function StockDetailPage() {
         <li>Day High: {stock.day_high}</li>
         <li>Day Low: {stock.day_low}</li>
         <li>Volume: {stock.volume}</li>
-        <li>Last Tarde Time: {stock.last_trade_time}</li>
+        <li>Last Trade Time: {stock.last_trade_time}</li>
       </ul>
       <button onClick={handleSave()}>Click to Save</button>
       <button>

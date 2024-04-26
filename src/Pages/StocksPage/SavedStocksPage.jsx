@@ -50,15 +50,18 @@ export default function SavedStocksPage() {
     loadSavedList();
   }, []);
 
+  const handleUnsave = () => async () => {
+    console.log("unsave");
+  };
+
   return (
     <>
       <p>SavedStocksPage</p>
-
       {savedList.map((savedStock) => (
         <ul key={savedStock.fields.Symbol}>
           <li>
             {savedStock.fields.Symbol}
-            <button>Unsave</button>
+            <button onClick={handleUnsave()}>Unsave</button>
           </li>
         </ul>
       ))}

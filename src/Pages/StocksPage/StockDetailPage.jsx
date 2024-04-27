@@ -7,16 +7,15 @@ export default function StockDetailPage() {
 
   useEffect(() => {
     async function loadStock() {
-      const response = await fetch(
-        // "https://api.marketdata.app/v1/stocks/quotes/AAPL"
-        // "https://api.stockdata.org/v1/data/quote?symbols=AAPL,TSLA,MSFT&api_token=jpqEm77zS2gsDoy1tifSsrgMvvpw3XS2zl6HHf2V"
+      const response = await fetch();
+      // "https://api.marketdata.app/v1/stocks/quotes/AAPL"
+      // "https://api.stockdata.org/v1/data/quote?symbols=AAPL,TSLA,MSFT&api_token=jpqEm77zS2gsDoy1tifSsrgMvvpw3XS2zl6HHf2V"
 
-        // `https://api.stockdata.org/v1/data/quote?symbols=${symbol}&api_token=jpqEm77zS2gsDoy1tifSsrgMvvpw3XS2zl6HHf2V`
-        `https://api.stockdata.org/v1/data/quote?symbols=${symbol}&api_token=JgOAADvWjnurMD8QLuMAkLF5XlL7pD8jQUMCqXlC`
-        // `https://api.stockdata.org/v1/data/quote?symbols=${symbol}&api_token=SQ6IJwKFCd5COSkR2TSgYxA4RCV0fzStMaVwPFSB`
-        // `https://api.stockdata.org/v1/data/quote?symbols=${symbol}&api_token=j6Hi7FQNMB8woaX3JlX1qoUpXAH4lb5cm3zoRYd7`
-        // `https://api.stockdata.org/v1/data/quote?symbols=${symbol}&api_token=HSmh0vNFwQe7kQyxHJwJu3HLZvlOvJ1it02wnLC7`
-      );
+      // `https://api.stockdata.org/v1/data/quote?symbols=${symbol}&api_token=jpqEm77zS2gsDoy1tifSsrgMvvpw3XS2zl6HHf2V`
+      // `https://api.stockdata.org/v1/data/quote?symbols=${symbol}&api_token=JgOAADvWjnurMD8QLuMAkLF5XlL7pD8jQUMCqXlC`
+      // `https://api.stockdata.org/v1/data/quote?symbols=${symbol}&api_token=SQ6IJwKFCd5COSkR2TSgYxA4RCV0fzStMaVwPFSB`
+      // `https://api.stockdata.org/v1/data/quote?symbols=${symbol}&api_token=j6Hi7FQNMB8woaX3JlX1qoUpXAH4lb5cm3zoRYd7`
+      // `https://api.stockdata.org/v1/data/quote?symbols=${symbol}&api_token=HSmh0vNFwQe7kQyxHJwJu3HLZvlOvJ1it02wnLC7`
 
       const data = await response.json();
       const stockData = data.data[0];
@@ -63,6 +62,14 @@ export default function StockDetailPage() {
     }
   }
 
+  async function lastOne() {
+    console.log("click last one");
+  }
+
+  async function nextOne() {
+    console.log("click next one");
+  }
+
   return (
     <>
       <h2>Stock Detail</h2>
@@ -77,16 +84,12 @@ export default function StockDetailPage() {
             <td>{stock.ticker}</td>
           </tr>
           <tr>
-            <th>Currency</th>
-            <td>{stock.currency}</td>
-          </tr>
-          <tr>
             <th>Price</th>
             <td>{stock.price}</td>
           </tr>
           <tr>
-            <th>Day Change</th>
-            <td>{stock.day_change}</td>
+            <th>Currency</th>
+            <td>{stock.currency}</td>
           </tr>
           <tr>
             <th>Day High</th>
@@ -95,6 +98,10 @@ export default function StockDetailPage() {
           <tr>
             <th>Day Low</th>
             <td>{stock.day_low}</td>
+          </tr>
+          <tr>
+            <th>Day Change</th>
+            <td>{stock.day_change}</td>
           </tr>
           <tr>
             <th>Volume</th>
@@ -107,9 +114,13 @@ export default function StockDetailPage() {
         </tbody>
       </table>
       <br />
+      <button onClick={() => lastOne()}>Last One</button>
+      <button onClick={() => nextOne()}>Next One</button>
+      <br />
       <button onClick={() => addSaveList(stock.ticker)}>Click to Save</button>
+      <br />
       <button>
-        <Link to={`/stocks`}>back</Link>
+        <Link to={`/stocks`}>Back</Link>
       </button>
     </>
   );

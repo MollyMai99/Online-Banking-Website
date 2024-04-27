@@ -3,29 +3,6 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 
 export default function SavedStocksPage() {
-  // const fetchAirtable = async () => {
-  //   const [savedList, setSavedList] = useState([]);
-
-  //   const url = "https://api.airtable.com/v0/appu6JDxJ0kPqISCM/Table%201";
-  //   const key =
-  //     "patc1K5wmYJTJIkjP.febf10fd5d52335a34877cd8e8eb742c0d247d1e0e9b86fc70259d7a20c4e076";
-
-  //   const options = {
-  //     method: "GET",
-  //     headers: {
-  //       Authorization: `Bearer ${key}`,
-  //     },
-  //   };
-
-  //   const response = await fetch(url, options);
-  //   const airtableResponse = await response.json();
-  //   // const savedList = airtableResponse;
-  //   console.log(airtableResponse);
-  //   // setSavedList(airtableResponse);
-  // };
-
-  // fetchAirtable();
-
   const [savedList, setSavedList] = useState([]);
 
   useEffect(() => {
@@ -44,16 +21,14 @@ export default function SavedStocksPage() {
       const response = await fetch(url, options);
       const airtableResponse = await response.json();
       const savedList = airtableResponse.records;
-      console.log(airtableResponse);
+      // console.log(airtableResponse);
       setSavedList(savedList);
-      console.log(savedList);
+      // console.log("savedList", savedList);
     }
     loadSavedList();
   }, []);
 
   async function deleteStock(id) {
-    console.log(id);
-
     const url = `https://api.airtable.com/v0/appu6JDxJ0kPqISCM/Table%201/${id}`;
     const key =
       "patc1K5wmYJTJIkjP.febf10fd5d52335a34877cd8e8eb742c0d247d1e0e9b86fc70259d7a20c4e076";
@@ -67,6 +42,14 @@ export default function SavedStocksPage() {
     };
     const response = await fetch(url, options);
     await response.json();
+
+    deleteStockState(id);
+  }
+
+  function deleteStockState(id) {
+    // console.log("deletestate", id);
+    const index = savedList.findIndex((stock) => stock.id === id);
+    setSavedList([...savedList.slice(0, index), ...savedList.slice(index + 1)]);
   }
 
   return (

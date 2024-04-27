@@ -1,28 +1,61 @@
 import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
+import popularStocksList from "../../popularStocksList";
 
 export default function StockDetailPage() {
   const [stock, setStock] = useState([]);
+  // const [stockRank, setStockRank] = useState(1);
+  const [lastSymbol, setLastSymbol] = useState();
+  const [nextSymbol, setNextSymbol] = useState();
+
   const { symbol } = useParams();
 
   useEffect(() => {
     async function loadStock() {
-      const response = await fetch();
-      // "https://api.marketdata.app/v1/stocks/quotes/AAPL"
-      // "https://api.stockdata.org/v1/data/quote?symbols=AAPL,TSLA,MSFT&api_token=jpqEm77zS2gsDoy1tifSsrgMvvpw3XS2zl6HHf2V"
+      const response = await fetch(
+        // "https://api.marketdata.app/v1/stocks/quotes/AAPL"
+        // "https://api.stockdata.org/v1/data/quote?symbols=AAPL,TSLA,MSFT&api_token=jpqEm77zS2gsDoy1tifSsrgMvvpw3XS2zl6HHf2V"
 
-      // `https://api.stockdata.org/v1/data/quote?symbols=${symbol}&api_token=jpqEm77zS2gsDoy1tifSsrgMvvpw3XS2zl6HHf2V`
-      // `https://api.stockdata.org/v1/data/quote?symbols=${symbol}&api_token=JgOAADvWjnurMD8QLuMAkLF5XlL7pD8jQUMCqXlC`
-      // `https://api.stockdata.org/v1/data/quote?symbols=${symbol}&api_token=SQ6IJwKFCd5COSkR2TSgYxA4RCV0fzStMaVwPFSB`
-      // `https://api.stockdata.org/v1/data/quote?symbols=${symbol}&api_token=j6Hi7FQNMB8woaX3JlX1qoUpXAH4lb5cm3zoRYd7`
-      // `https://api.stockdata.org/v1/data/quote?symbols=${symbol}&api_token=HSmh0vNFwQe7kQyxHJwJu3HLZvlOvJ1it02wnLC7`
+        // `https://api.stockdata.org/v1/data/quote?symbols=${symbol}&api_token=jpqEm77zS2gsDoy1tifSsrgMvvpw3XS2zl6HHf2V`
+        // `https://api.stockdata.org/v1/data/quote?symbols=${symbol}&api_token=JgOAADvWjnurMD8QLuMAkLF5XlL7pD8jQUMCqXlC`
+        // `https://api.stockdata.org/v1/data/quote?symbols=${symbol}&api_token=SQ6IJwKFCd5COSkR2TSgYxA4RCV0fzStMaVwPFSB`
+        `https://api.stockdata.org/v1/data/quote?symbols=${symbol}&api_token=j6Hi7FQNMB8woaX3JlX1qoUpXAH4lb5cm3zoRYd7`
+        // `https://api.stockdata.org/v1/data/quote?symbols=${symbol}&api_token=HSmh0vNFwQe7kQyxHJwJu3HLZvlOvJ1it02wnLC7`
+      );
 
       const data = await response.json();
       const stockData = data.data[0];
       setStock(stockData);
     }
+
+    async function handelLastNext(symbol) {
+      const foundStock = popularStocksList.find(
+        (item) => item.symbol === symbol
+      );
+      const stockRank = foundStock.rank;
+      // console.log("rank", stockRank);
+
+      const foundLastStock = popularStocksList.find(
+        (item) => item.rank === stockRank - 1
+      );
+      const last = foundLastStock.symbol;
+      setLastSymbol(last);
+      // console.log("lastsymbol", lastSymbol);
+
+      const foundNextStock = popularStocksList.find(
+        (item) => item.rank === stockRank + 1
+      );
+      const next = foundNextStock.symbol;
+      setNextSymbol(next);
+      // console.log("nextsymbol", nextSymbol);
+
+      // setStockRank(stockRank);
+      // console.log(stockRank);
+    }
+
     loadStock();
-  }, [symbol]);
+    handelLastNext(symbol);
+  }, [symbol, lastSymbol, nextSymbol]);
 
   async function addSaveList(symbol) {
     // console.log("addsave", symbol);
@@ -60,14 +93,6 @@ export default function StockDetailPage() {
     } catch (error) {
       console.error("Error adding symbol to save list:", error);
     }
-  }
-
-  async function lastOne() {
-    console.log("click last one");
-  }
-
-  async function nextOne() {
-    console.log("click next one");
   }
 
   return (
@@ -114,8 +139,12 @@ export default function StockDetailPage() {
         </tbody>
       </table>
       <br />
-      <button onClick={() => lastOne()}>Last One</button>
-      <button onClick={() => nextOne()}>Next One</button>
+      <button>
+        <Link to={`/stocks/${lastSymbol}`}>Last Stock: {lastSymbol}</Link>
+      </button>
+      <button>
+        <Link to={`/stocks/${nextSymbol}`}>Next Stock: {nextSymbol}</Link>
+      </button>
       <br />
       <button onClick={() => addSaveList(stock.ticker)}>Click to Save</button>
       <br />

@@ -11,8 +11,8 @@ export default function StockDetailPage() {
         // "https://api.marketdata.app/v1/stocks/quotes/AAPL"
         // "https://api.stockdata.org/v1/data/quote?symbols=AAPL,TSLA,MSFT&api_token=jpqEm77zS2gsDoy1tifSsrgMvvpw3XS2zl6HHf2V"
 
-        `https://api.stockdata.org/v1/data/quote?symbols=${symbol}&api_token=jpqEm77zS2gsDoy1tifSsrgMvvpw3XS2zl6HHf2V`
-        // `https://api.stockdata.org/v1/data/quote?symbols=${symbol}&api_token=JgOAADvWjnurMD8QLuMAkLF5XlL7pD8jQUMCqXlC`
+        // `https://api.stockdata.org/v1/data/quote?symbols=${symbol}&api_token=jpqEm77zS2gsDoy1tifSsrgMvvpw3XS2zl6HHf2V`
+        `https://api.stockdata.org/v1/data/quote?symbols=${symbol}&api_token=JgOAADvWjnurMD8QLuMAkLF5XlL7pD8jQUMCqXlC`
         // `https://api.stockdata.org/v1/data/quote?symbols=${symbol}&api_token=SQ6IJwKFCd5COSkR2TSgYxA4RCV0fzStMaVwPFSB`
         // `https://api.stockdata.org/v1/data/quote?symbols=${symbol}&api_token=j6Hi7FQNMB8woaX3JlX1qoUpXAH4lb5cm3zoRYd7`
         // `https://api.stockdata.org/v1/data/quote?symbols=${symbol}&api_token=HSmh0vNFwQe7kQyxHJwJu3HLZvlOvJ1it02wnLC7`
@@ -21,21 +21,12 @@ export default function StockDetailPage() {
       const data = await response.json();
       const stockData = data.data[0];
       setStock(stockData);
-      // console.log("1", stock);
     }
     loadStock();
   }, [symbol]);
 
-  // function handleSave() {
-  //   console.log("click to save");
-  // }
-
-  // const addSaveList = () => async () => {
-  //   console.log("click to save");
-  // };
-
   async function addSaveList(symbol) {
-    console.log("addsave", symbol);
+    // console.log("addsave", symbol);
 
     const url = "https://api.airtable.com/v0/appu6JDxJ0kPqISCM/Table%201";
     const key =
@@ -56,10 +47,9 @@ export default function StockDetailPage() {
         Authorization: `Bearer ${key}`,
         "Content-Type": "application/json", // Specify the content type
       },
-      // body: addSymbolObj,
       body: JSON.stringify(addSymbolObj),
     };
-    console.log(addSymbolObj); // Add request body if needed
+    // console.log(addSymbolObj); // Add request body if needed
 
     try {
       const response = await fetch(url, options);
@@ -75,7 +65,57 @@ export default function StockDetailPage() {
 
   return (
     <>
-      <hr />
+      <h2>Stock Detail</h2>
+      <table>
+        <tbody>
+          <tr>
+            <th>Name </th>
+            <td>{stock.name}</td>
+          </tr>
+          <tr>
+            <th>Symbol</th>
+            <td>{stock.ticker}</td>
+          </tr>
+          <tr>
+            <th>Currency</th>
+            <td>{stock.currency}</td>
+          </tr>
+          <tr>
+            <th>Price</th>
+            <td>{stock.price}</td>
+          </tr>
+          <tr>
+            <th>Day Change</th>
+            <td>{stock.day_change}</td>
+          </tr>
+          <tr>
+            <th>Day High</th>
+            <td>{stock.day_high}</td>
+          </tr>
+          <tr>
+            <th>Day Low</th>
+            <td>{stock.day_low}</td>
+          </tr>
+          <tr>
+            <th>Volume</th>
+            <td>{stock.volume}</td>
+          </tr>
+          <tr>
+            <th>Last Trade Time</th>
+            <td>{stock.last_trade_time}</td>
+          </tr>
+        </tbody>
+      </table>
+      <br />
+      <button onClick={() => addSaveList(stock.ticker)}>Click to Save</button>
+      <button>
+        <Link to={`/stocks`}>back</Link>
+      </button>
+    </>
+  );
+}
+
+/* <hr />
       <h1>StockDetailPage</h1>
       <ul>
         <li>Name: {stock.name}</li>
@@ -87,11 +127,4 @@ export default function StockDetailPage() {
         <li>Day Low: {stock.day_low}</li>
         <li>Volume: {stock.volume}</li>
         <li>Last Trade Time: {stock.last_trade_time}</li>
-      </ul>
-      <button onClick={() => addSaveList(stock.ticker)}>Click to Save</button>
-      <button>
-        <Link to={`/stocks`}>back</Link>
-      </button>
-    </>
-  );
-}
+      </ul> */

@@ -9,6 +9,10 @@ export default function StockDetailTable({ stock }) {
     }
   };
 
+  const formatVolume = (volume) => {
+    return Number(volume).toLocaleString();
+  };
+
   return (
     <>
       <table>
@@ -43,7 +47,8 @@ export default function StockDetailTable({ stock }) {
           </tr>
           <tr>
             <th>Volume</th>
-            <td>{Number(stock.volume).toLocaleString()}</td>
+            <td>{formatVolume(stock.volume)}</td>
+            {/* <td>{Number(stock.volume).toLocaleString()}</td> */}
           </tr>
           <tr>
             <th>Last Trade Time</th>

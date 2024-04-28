@@ -5,8 +5,8 @@ import StockDetailTable from "./StockDetailTable";
 
 export default function StockDetailPage() {
   const [stock, setStock] = useState([]);
-  const [lastSymbol, setLastSymbol] = useState();
-  const [nextSymbol, setNextSymbol] = useState();
+  const [lastSymbol, setLastSymbol] = useState("AAPL");
+  const [nextSymbol, setNextSymbol] = useState("INTC");
   const [stockPrice, setStockPrice] = useState();
   const [stockCurrency, setStockCurrency] = useState();
 
@@ -114,7 +114,26 @@ export default function StockDetailPage() {
         stockPrice={stockPrice}
         stockCurrency={stockCurrency}
       />
-      {/* <table>
+      <button onClick={() => convertSGD(stock.price)}>
+        Convert Price to SGD
+      </button>
+      <button onClick={() => addSaveList(stock.ticker)}>Click to Save</button>
+      <hr />
+      <button>
+        <Link to={`/stocks/${lastSymbol}`}>Last Stock: {lastSymbol}</Link>
+      </button>
+      <button>
+        <Link to={`/stocks/${nextSymbol}`}>Next Stock: {nextSymbol}</Link>
+      </button>
+      <br />
+      <button>
+        <Link to={`/stocks`}>Back</Link>
+      </button>
+    </>
+  );
+}
+
+/* <table>
         <tbody>
           <tr>
             <th>Name </th>
@@ -153,23 +172,4 @@ export default function StockDetailPage() {
             <td>{stock.last_trade_time}</td>
           </tr>
         </tbody>
-      </table> */}
-      <br />
-      <button onClick={() => convertSGD(stock.price)}>
-        Convert Price to SGD
-      </button>
-      <button onClick={() => addSaveList(stock.ticker)}>Click to Save</button>
-      <hr />
-      <button>
-        <Link to={`/stocks/${lastSymbol}`}>Last Stock: {lastSymbol}</Link>
-      </button>
-      <button>
-        <Link to={`/stocks/${nextSymbol}`}>Next Stock: {nextSymbol}</Link>
-      </button>
-      <br />
-      <button>
-        <Link to={`/stocks`}>Back</Link>
-      </button>
-    </>
-  );
-}
+      </table> */

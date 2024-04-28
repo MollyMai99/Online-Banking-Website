@@ -41,6 +41,7 @@ export default function StockDetailTable({ stock, stockPrice, stockCurrency }) {
           </tr>
         </tbody>
       </table>
+      <br />
     </>
   );
 }

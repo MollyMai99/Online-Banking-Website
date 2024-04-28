@@ -14,12 +14,12 @@ export default function StockDetailTable({ stock }) {
       <table>
         <tbody>
           <tr>
-            <th>Name </th>
-            <td>{stock.name}</td>
-          </tr>
-          <tr>
             <th>Symbol</th>
             <td>{stock.ticker}</td>
+          </tr>
+          <tr>
+            <th>Name </th>
+            <td>{stock.name}</td>
           </tr>
           <tr>
             <th>Price</th>

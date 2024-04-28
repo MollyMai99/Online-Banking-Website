@@ -1,4 +1,14 @@
 export default function StockDetailTable({ stock }) {
+  const formatLastTradeTime = (dateTimeString) => {
+    if (dateTimeString) {
+      return dateTimeString
+        .replace("T", " ")
+        .substring(0, dateTimeString.length - 7);
+    } else {
+      return "";
+    }
+  };
+
   return (
     <>
       <table>
@@ -37,7 +47,7 @@ export default function StockDetailTable({ stock }) {
           </tr>
           <tr>
             <th>Last Trade Time</th>
-            <td>{stock.last_trade_time}</td>
+            <td>{formatLastTradeTime(stock.last_trade_time)}</td>
           </tr>
         </tbody>
       </table>

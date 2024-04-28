@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
-import popularStocksList from "../../popularStocksList";
+import popularStocksList from "./popularStocksList";
 
 export default function StockDetailPage() {
   const [stock, setStock] = useState([]);

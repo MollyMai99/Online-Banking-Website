@@ -11,7 +11,7 @@ export default function Navbar() {
           <Link to={`/home`}>Company Background</Link>
         </li>
         <li>
-          <Link to={`/stocks`}>Top 3 Popular Stocks</Link>
+          <Link to={`/stocks`}>Popular Stocks</Link>
         </li>
         <li>
           <Link to={`/savedstocks`}>Saved Stocks</Link>

@@ -2,13 +2,14 @@ import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import popularStocksList from "./popularStocksList";
 import StockDetailTable from "./StockDetailTable";
+import ConvertToSGD from "./ConvertToSGD";
 
 export default function StockDetailPage() {
   const [stock, setStock] = useState([]);
   const [lastSymbol, setLastSymbol] = useState("AAPL");
   const [nextSymbol, setNextSymbol] = useState("INTC");
-  const [stockPrice, setStockPrice] = useState();
-  const [stockCurrency, setStockCurrency] = useState();
+  // const [stockPrice, setStockPrice] = useState();
+  // const [stockCurrency, setStockCurrency] = useState();
 
   const { symbol } = useParams();
 
@@ -27,9 +28,9 @@ export default function StockDetailPage() {
 
       const data = await response.json();
       const stockData = data.data[0];
-      setStockCurrency("USD");
+      // setStockCurrency("USD");
       setStock(stockData);
-      setStockPrice(stockData.price);
+      // setStockPrice(stockData.price);
     }
 
     async function handelLastNext(symbol) {
@@ -99,24 +100,25 @@ export default function StockDetailPage() {
     }
   }
 
-  async function convertSGD(priceUSD) {
-    const rateSGD = 1.36;
-    const priceSGD = priceUSD * rateSGD;
-    setStockPrice(priceSGD);
-    setStockCurrency("SGD");
-  }
+  // async function convertSGD(priceUSD) {
+  //   const rateSGD = 1.36;
+  //   const priceSGD = priceUSD * rateSGD;
+  //   setStockPrice(priceSGD);
+  //   setStockCurrency("SGD");
+  // }
 
   return (
     <>
       <h2>Stock Detail</h2>
       <StockDetailTable
         stock={stock}
-        stockPrice={stockPrice}
-        stockCurrency={stockCurrency}
+        // stockPrice={stockPrice}
+        // stockCurrency={stockCurrency}
       />
-      <button onClick={() => convertSGD(stock.price)}>
+      <ConvertToSGD priceUSD={stock.price} />
+      {/* <button onClick={() => convertSGD(stock.price)}>
         Convert Price to SGD
-      </button>
+      </button> */}
       <button onClick={() => addSaveList(stock.ticker)}>Click to Save</button>
       <hr />
       <button>

@@ -1,4 +1,6 @@
-export default function StockDetailTable({ stock, stockPrice, stockCurrency }) {
+export default function StockDetailTable({ stock }) {
+  // export default function StockDetailTable({ stock, stockPrice, stockCurrency }) {
+
   return (
     <>
       <table>
@@ -13,11 +15,11 @@ export default function StockDetailTable({ stock, stockPrice, stockCurrency }) {
           </tr>
           <tr>
             <th>Price</th>
-            <td>{stockPrice}</td>
+            <td>{stock.price}</td>
           </tr>
           <tr>
             <th>Currency</th>
-            <td>{stockCurrency}</td>
+            <td>{stock.currency}</td>
           </tr>
           <tr>
             <th>Day High</th>
@@ -41,7 +43,6 @@ export default function StockDetailTable({ stock, stockPrice, stockCurrency }) {
           </tr>
         </tbody>
       </table>
-      <br />
     </>
   );
 }

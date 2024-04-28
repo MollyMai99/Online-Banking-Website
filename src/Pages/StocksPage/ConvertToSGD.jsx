@@ -1,8 +1,6 @@
-import { useState } from "react";
+// import { useState } from "react";
 
-export default function ConvertToSGD({ priceUSD }) {
-  const [priceSGD, setPriceSGD] = useState();
-
+export default function ConvertToSGD({ priceUSD, priceSGD }) {
   const convertToSGD = () => {
     const rateSGD = 1.36;
     const convertedPrice = priceUSD * rateSGD;

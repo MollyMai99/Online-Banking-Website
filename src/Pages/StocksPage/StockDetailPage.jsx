@@ -2,12 +2,13 @@ import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import popularStocksList from "./popularStocksList";
 import StockDetailTable from "./StockDetailTable";
-import ConvertToSGD from "./ConvertToSGD";
+// import ConvertToSGD from "./ConvertToSGD";
 
 export default function StockDetailPage() {
   const [stock, setStock] = useState([]);
   const [lastSymbol, setLastSymbol] = useState("AAPL");
   const [nextSymbol, setNextSymbol] = useState("INTC");
+  const [priceSGD, setPriceSGD] = useState();
   // const [stockPrice, setStockPrice] = useState();
   // const [stockCurrency, setStockCurrency] = useState();
 
@@ -22,14 +23,15 @@ export default function StockDetailPage() {
         // `https://api.stockdata.org/v1/data/quote?symbols=${symbol}&api_token=jpqEm77zS2gsDoy1tifSsrgMvvpw3XS2zl6HHf2V`
         // `https://api.stockdata.org/v1/data/quote?symbols=${symbol}&api_token=JgOAADvWjnurMD8QLuMAkLF5XlL7pD8jQUMCqXlC`
         // `https://api.stockdata.org/v1/data/quote?symbols=${symbol}&api_token=SQ6IJwKFCd5COSkR2TSgYxA4RCV0fzStMaVwPFSB`
-        `https://api.stockdata.org/v1/data/quote?symbols=${symbol}&api_token=j6Hi7FQNMB8woaX3JlX1qoUpXAH4lb5cm3zoRYd7`
-        // `https://api.stockdata.org/v1/data/quote?symbols=${symbol}&api_token=HSmh0vNFwQe7kQyxHJwJu3HLZvlOvJ1it02wnLC7`
+        // `https://api.stockdata.org/v1/data/quote?symbols=${symbol}&api_token=j6Hi7FQNMB8woaX3JlX1qoUpXAH4lb5cm3zoRYd7`
+        `https://api.stockdata.org/v1/data/quote?symbols=${symbol}&api_token=HSmh0vNFwQe7kQyxHJwJu3HLZvlOvJ1it02wnLC7`
       );
 
       const data = await response.json();
       const stockData = data.data[0];
       // setStockCurrency("USD");
       setStock(stockData);
+      // setPriceSGD();
       // setStockPrice(stockData.price);
     }
 
@@ -60,6 +62,7 @@ export default function StockDetailPage() {
 
     loadStock();
     handelLastNext(symbol);
+    setPriceSGD();
   }, [symbol, lastSymbol, nextSymbol]);
 
   async function addSaveList(symbol) {
@@ -100,6 +103,12 @@ export default function StockDetailPage() {
     }
   }
 
+  async function convertToSGD(priceUSD) {
+    const rateSGD = 1.36;
+    const convertedPrice = priceUSD * rateSGD;
+    setPriceSGD(convertedPrice);
+  }
+
   // async function convertSGD(priceUSD) {
   //   const rateSGD = 1.36;
   //   const priceSGD = priceUSD * rateSGD;
@@ -115,10 +124,15 @@ export default function StockDetailPage() {
         // stockPrice={stockPrice}
         // stockCurrency={stockCurrency}
       />
-      <ConvertToSGD priceUSD={stock.price} />
+      {/* <ConvertToSGD priceUSD={stock.price} priceSGD={priceSGD} /> */}
       {/* <button onClick={() => convertSGD(stock.price)}>
         Convert Price to SGD
       </button> */}
+      <button onClick={() => convertToSGD(stock.price)}>
+        Convert Price to SGD
+      </button>
+      {priceSGD && <p>Price in SGD: {priceSGD.toFixed(2)}</p>}
+      <br />
       <button onClick={() => addSaveList(stock.ticker)}>Click to Save</button>
       <hr />
       <button>

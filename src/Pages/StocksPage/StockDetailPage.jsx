@@ -6,6 +6,8 @@ export default function StockDetailPage() {
   const [stock, setStock] = useState([]);
   const [lastSymbol, setLastSymbol] = useState();
   const [nextSymbol, setNextSymbol] = useState();
+  const [stockPrice, setStockPrice] = useState();
+  const [stockCurrency, setStockCurrency] = useState();
 
   const { symbol } = useParams();
 
@@ -15,8 +17,8 @@ export default function StockDetailPage() {
         // "https://api.marketdata.app/v1/stocks/quotes/AAPL"
         // "https://api.stockdata.org/v1/data/quote?symbols=AAPL,TSLA,MSFT&api_token=jpqEm77zS2gsDoy1tifSsrgMvvpw3XS2zl6HHf2V"
 
-        `https://api.stockdata.org/v1/data/quote?symbols=${symbol}&api_token=jpqEm77zS2gsDoy1tifSsrgMvvpw3XS2zl6HHf2V`
-        // `https://api.stockdata.org/v1/data/quote?symbols=${symbol}&api_token=JgOAADvWjnurMD8QLuMAkLF5XlL7pD8jQUMCqXlC`
+        // `https://api.stockdata.org/v1/data/quote?symbols=${symbol}&api_token=jpqEm77zS2gsDoy1tifSsrgMvvpw3XS2zl6HHf2V`
+        `https://api.stockdata.org/v1/data/quote?symbols=${symbol}&api_token=JgOAADvWjnurMD8QLuMAkLF5XlL7pD8jQUMCqXlC`
         // `https://api.stockdata.org/v1/data/quote?symbols=${symbol}&api_token=SQ6IJwKFCd5COSkR2TSgYxA4RCV0fzStMaVwPFSB`
         // `https://api.stockdata.org/v1/data/quote?symbols=${symbol}&api_token=j6Hi7FQNMB8woaX3JlX1qoUpXAH4lb5cm3zoRYd7`
         // `https://api.stockdata.org/v1/data/quote?symbols=${symbol}&api_token=HSmh0vNFwQe7kQyxHJwJu3HLZvlOvJ1it02wnLC7`
@@ -24,7 +26,9 @@ export default function StockDetailPage() {
 
       const data = await response.json();
       const stockData = data.data[0];
+      setStockCurrency("USD");
       setStock(stockData);
+      setStockPrice(stockData.price);
     }
 
     async function handelLastNext(symbol) {
@@ -94,8 +98,11 @@ export default function StockDetailPage() {
     }
   }
 
-  async function convertSGD() {
-    console.log("convertSGD");
+  async function convertSGD(priceUSD) {
+    const rateSGD = 1.36;
+    const priceSGD = priceUSD * rateSGD;
+    setStockPrice(priceSGD);
+    setStockCurrency("SGD");
   }
 
   return (
@@ -113,11 +120,11 @@ export default function StockDetailPage() {
           </tr>
           <tr>
             <th>Price</th>
-            <td>{stock.price}</td>
+            <td>{stockPrice}</td>
           </tr>
           <tr>
             <th>Currency</th>
-            <td>{stock.currency}</td>
+            <td>{stockCurrency}</td>
           </tr>
           <tr>
             <th>Day High</th>
@@ -142,7 +149,9 @@ export default function StockDetailPage() {
         </tbody>
       </table>
       <br />
-      <button onClick={() => convertSGD()}>Convert to SGD</button>
+      <button onClick={() => convertSGD(stock.price)}>
+        Convert Price to SGD
+      </button>
       <button onClick={() => addSaveList(stock.ticker)}>Click to Save</button>
       <hr />
       <button>
@@ -158,17 +167,3 @@ export default function StockDetailPage() {
     </>
   );
 }
-
-/* <hr />
-      <h1>StockDetailPage</h1>
-      <ul>
-        <li>Name: {stock.name}</li>
-        <li>Symbol: {stock.ticker}</li>
-        <li>Currency: {stock.currency}</li>
-        <li>Price: {stock.price}</li>
-        <li>Day Change: {stock.day_change}</li>
-        <li>Day High: {stock.day_high}</li>
-        <li>Day Low: {stock.day_low}</li>
-        <li>Volume: {stock.volume}</li>
-        <li>Last Trade Time: {stock.last_trade_time}</li>
-      </ul> */

@@ -33,7 +33,7 @@ export default function StockDetailTable({ stock }) {
           </tr>
           <tr>
             <th>Volume</th>
-            <td>{stock.volume}</td>
+            <td>{Number(stock.volume).toLocaleString()}</td>
           </tr>
           <tr>
             <th>Last Trade Time</th>

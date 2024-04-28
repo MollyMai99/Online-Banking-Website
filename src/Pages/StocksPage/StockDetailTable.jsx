@@ -1,6 +1,4 @@
 export default function StockDetailTable({ stock }) {
-  // export default function StockDetailTable({ stock, stockPrice, stockCurrency }) {
-
   return (
     <>
       <table>

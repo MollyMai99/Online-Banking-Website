@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom";
 import popularStocksList from "./popularStocksList";
 import { useState } from "react";
-// import StockDetailPage from "./StockDetailPage";
 
 export default function TopStocksPage() {
   //   console.log("top", stocks);

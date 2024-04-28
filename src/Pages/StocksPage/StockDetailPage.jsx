@@ -2,15 +2,12 @@ import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import popularStocksList from "./popularStocksList";
 import StockDetailTable from "./StockDetailTable";
-// import ConvertToSGD from "./ConvertToSGD";
 
 export default function StockDetailPage() {
   const [stock, setStock] = useState([]);
   const [lastSymbol, setLastSymbol] = useState("AAPL");
   const [nextSymbol, setNextSymbol] = useState("INTC");
   const [priceSGD, setPriceSGD] = useState();
-  // const [stockPrice, setStockPrice] = useState();
-  // const [stockCurrency, setStockCurrency] = useState();
 
   const { symbol } = useParams();
 
@@ -29,10 +26,7 @@ export default function StockDetailPage() {
 
       const data = await response.json();
       const stockData = data.data[0];
-      // setStockCurrency("USD");
       setStock(stockData);
-      // setPriceSGD();
-      // setStockPrice(stockData.price);
     }
 
     async function handelLastNext(symbol) {
@@ -109,25 +103,10 @@ export default function StockDetailPage() {
     setPriceSGD(convertedPrice);
   }
 
-  // async function convertSGD(priceUSD) {
-  //   const rateSGD = 1.36;
-  //   const priceSGD = priceUSD * rateSGD;
-  //   setStockPrice(priceSGD);
-  //   setStockCurrency("SGD");
-  // }
-
   return (
     <>
       <h2>Stock Detail</h2>
-      <StockDetailTable
-        stock={stock}
-        // stockPrice={stockPrice}
-        // stockCurrency={stockCurrency}
-      />
-      {/* <ConvertToSGD priceUSD={stock.price} priceSGD={priceSGD} /> */}
-      {/* <button onClick={() => convertSGD(stock.price)}>
-        Convert Price to SGD
-      </button> */}
+      <StockDetailTable stock={stock} />
       <button onClick={() => convertToSGD(stock.price)}>
         Convert Price to SGD
       </button>
@@ -148,44 +127,3 @@ export default function StockDetailPage() {
     </>
   );
 }
-
-/* <table>
-        <tbody>
-          <tr>
-            <th>Name </th>
-            <td>{stock.name}</td>
-          </tr>
-          <tr>
-            <th>Symbol</th>
-            <td>{stock.ticker}</td>
-          </tr>
-          <tr>
-            <th>Price</th>
-            <td>{stockPrice}</td>
-          </tr>
-          <tr>
-            <th>Currency</th>
-            <td>{stockCurrency}</td>
-          </tr>
-          <tr>
-            <th>Day High</th>
-            <td>{stock.day_high}</td>
-          </tr>
-          <tr>
-            <th>Day Low</th>
-            <td>{stock.day_low}</td>
-          </tr>
-          <tr>
-            <th>Day Change</th>
-            <td>{stock.day_change}</td>
-          </tr>
-          <tr>
-            <th>Volume</th>
-            <td>{stock.volume}</td>
-          </tr>
-          <tr>
-            <th>Last Trade Time</th>
-            <td>{stock.last_trade_time}</td>
-          </tr>
-        </tbody>
-      </table> */

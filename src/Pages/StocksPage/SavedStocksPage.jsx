@@ -47,7 +47,7 @@ export default function SavedStocksPage() {
   }
 
   function deleteStockState(id) {
-    // console.log("deletestate", id);
+    console.log("deletestate", id);
     const index = savedList.findIndex((stock) => stock.id === id);
     setSavedList([...savedList.slice(0, index), ...savedList.slice(index + 1)]);
   }

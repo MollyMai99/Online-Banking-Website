@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import popularStocksList from "./popularStocksList";
+import StockDetailTable from "./StockDetailTable";
 
 export default function StockDetailPage() {
   const [stock, setStock] = useState([]);
@@ -18,8 +19,8 @@ export default function StockDetailPage() {
         // "https://api.stockdata.org/v1/data/quote?symbols=AAPL,TSLA,MSFT&api_token=jpqEm77zS2gsDoy1tifSsrgMvvpw3XS2zl6HHf2V"
 
         // `https://api.stockdata.org/v1/data/quote?symbols=${symbol}&api_token=jpqEm77zS2gsDoy1tifSsrgMvvpw3XS2zl6HHf2V`
-        `https://api.stockdata.org/v1/data/quote?symbols=${symbol}&api_token=JgOAADvWjnurMD8QLuMAkLF5XlL7pD8jQUMCqXlC`
-        // `https://api.stockdata.org/v1/data/quote?symbols=${symbol}&api_token=SQ6IJwKFCd5COSkR2TSgYxA4RCV0fzStMaVwPFSB`
+        // `https://api.stockdata.org/v1/data/quote?symbols=${symbol}&api_token=JgOAADvWjnurMD8QLuMAkLF5XlL7pD8jQUMCqXlC`
+        `https://api.stockdata.org/v1/data/quote?symbols=${symbol}&api_token=SQ6IJwKFCd5COSkR2TSgYxA4RCV0fzStMaVwPFSB`
         // `https://api.stockdata.org/v1/data/quote?symbols=${symbol}&api_token=j6Hi7FQNMB8woaX3JlX1qoUpXAH4lb5cm3zoRYd7`
         // `https://api.stockdata.org/v1/data/quote?symbols=${symbol}&api_token=HSmh0vNFwQe7kQyxHJwJu3HLZvlOvJ1it02wnLC7`
       );
@@ -108,7 +109,12 @@ export default function StockDetailPage() {
   return (
     <>
       <h2>Stock Detail</h2>
-      <table>
+      <StockDetailTable
+        stock={stock}
+        stockPrice={stockPrice}
+        stockCurrency={stockCurrency}
+      />
+      {/* <table>
         <tbody>
           <tr>
             <th>Name </th>
@@ -147,7 +153,7 @@ export default function StockDetailPage() {
             <td>{stock.last_trade_time}</td>
           </tr>
         </tbody>
-      </table>
+      </table> */}
       <br />
       <button onClick={() => convertSGD(stock.price)}>
         Convert Price to SGD

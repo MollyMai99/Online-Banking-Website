@@ -17,17 +17,17 @@ It is an online banking platform using React. Users can view popular stocks on t
 
 ## Wireframe
 
-### Navbar
+#### Navbar
 
-### Home Page
+#### Home Page
 
 - Introduction
 
-### Popular Stocks Page
+#### Popular Stocks Page
 
 - Stocks List(Name, Symbol)
 
-### Stock Detail Page
+#### Stock Detail Page
 
 - Detail Table
   - Information: Symbol, Name, Price, Currency, Day High, Day Low, Day Change, Volume, Last Trade Time
@@ -39,14 +39,14 @@ It is an online banking platform using React. Users can view popular stocks on t
 - Button: Last Stock & Next Stock
 - Button: Back
 
-### Saved Stocks Page
+#### Saved Stocks Page
 
 - Saved Stock List
   - Fetch data from online database
 - Button: Unsave
   - Used online database for DELETE
 
-### My Wallet Page
+#### My Wallet Page
 
 - Current Balance
   - Fetch data from online database

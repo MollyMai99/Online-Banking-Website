@@ -15,9 +15,6 @@ export default function StockDetailPage() {
   useEffect(() => {
     async function loadStock() {
       const response = await fetch(
-        // "https://api.marketdata.app/v1/stocks/quotes/AAPL"
-        // "https://api.stockdata.org/v1/data/quote?symbols=AAPL,TSLA,MSFT&api_token=jpqEm77zS2gsDoy1tifSsrgMvvpw3XS2zl6HHf2V"
-
         // `https://api.stockdata.org/v1/data/quote?symbols=${symbol}&api_token=jpqEm77zS2gsDoy1tifSsrgMvvpw3XS2zl6HHf2V`
         // `https://api.stockdata.org/v1/data/quote?symbols=${symbol}&api_token=JgOAADvWjnurMD8QLuMAkLF5XlL7pD8jQUMCqXlC`
         `https://api.stockdata.org/v1/data/quote?symbols=${symbol}&api_token=SQ6IJwKFCd5COSkR2TSgYxA4RCV0fzStMaVwPFSB`
@@ -31,10 +28,8 @@ export default function StockDetailPage() {
     }
 
     loadStock();
-    // handelLastNext(symbol);
     setPriceSGD();
   }, [symbol]);
-  // }, [symbol, lastSymbol, nextSymbol]);
 
   return (
     <>

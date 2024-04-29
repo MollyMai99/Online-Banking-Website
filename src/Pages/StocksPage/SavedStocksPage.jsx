@@ -20,9 +20,7 @@ export default function SavedStocksPage() {
       const response = await fetch(url, options);
       const airtableResponse = await response.json();
       const savedList = airtableResponse.records;
-      // console.log(airtableResponse);
       setSavedList(savedList);
-      // console.log("savedList", savedList);
     }
     loadSavedList();
   }, []);
@@ -43,31 +41,3 @@ export default function SavedStocksPage() {
     </>
   );
 }
-
-// async function unsaveStock(id) {
-//   const url = `https://api.airtable.com/v0/appu6JDxJ0kPqISCM/Table%201/${id}`;
-//   const key =
-//     "patc1K5wmYJTJIkjP.febf10fd5d52335a34877cd8e8eb742c0d247d1e0e9b86fc70259d7a20c4e076";
-
-//   const options = {
-//     method: "DELETE",
-//     headers: {
-//       Authorization: `Bearer ${key}`,
-//       "Content-Type": "application/json",
-//     },
-//   };
-//   const response = await fetch(url, options);
-//   await response.json();
-
-//   unsaveStockState(id);
-// }
-
-/* {/* {savedList.map((savedStock) => (
-  <UnsaveHandle
-    key={savedStock.id}
-    id={savedStock.id}
-    symbol={savedStock.fields.Symbol}
-    // savedList={savedList}
-    // setSavedList={setSavedList}
-    unsaveStockState={unsaveStockState}
-  /> */

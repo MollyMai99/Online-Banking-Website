@@ -48,7 +48,6 @@ export default function StockDetailTable({ stock }) {
           <tr>
             <th>Volume</th>
             <td>{formatVolume(stock.volume)}</td>
-            {/* <td>{Number(stock.volume).toLocaleString()}</td> */}
           </tr>
           <tr>
             <th>Last Trade Time</th>

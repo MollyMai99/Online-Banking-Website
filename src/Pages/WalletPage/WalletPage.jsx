@@ -6,7 +6,6 @@ export default function WalletPage() {
   useEffect(() => {
     async function loadWallet() {
       const url = "https://api.airtable.com/v0/appu6JDxJ0kPqISCM/wallet";
-      // "https://api.airtable.com/v0/appu6JDxJ0kPqISCM/wallet?maxRecords=3&view=Grid%20view"
       const key =
         "patc1K5wmYJTJIkjP.febf10fd5d52335a34877cd8e8eb742c0d247d1e0e9b86fc70259d7a20c4e076";
 
@@ -20,18 +19,14 @@ export default function WalletPage() {
       const response = await fetch(url, options);
       const airtableResponse = await response.json();
       const balance = airtableResponse.records[0].fields.balance;
-      //   console.log(balance);
       setBalance(parseFloat(balance));
-      // console.log("savedList", savedList);
     }
     loadWallet();
   }, []);
 
   async function handleDeposit() {
-    // console.log(typeof balance);
     const newBalance = balance + 500;
     setBalance(newBalance);
-    // console.log(typeof newBalance);
 
     const url = `https://api.airtable.com/v0/appu6JDxJ0kPqISCM/wallet`;
     const key =
@@ -64,7 +59,6 @@ export default function WalletPage() {
       <h1>My Wallet</h1>
       <p>Balance: {balance.toFixed(2)}</p>
       <hr />
-      {/* <p>Deposit Funds</p> */}
       <button onClick={() => handleDeposit()}>Deposit 500 SGD</button>
     </>
   );

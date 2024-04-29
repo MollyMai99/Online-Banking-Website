@@ -57,7 +57,7 @@ It is an online banking platform using React. Users can view popular stocks on t
 
 [Trello](https://trello.com/invite/b/btJqDKyi/ATTI389e3539f235535c56f0b3ebe256a519BCA9345F/online-banking-website)
 
-## Technologies Used
+## Technologies and Tools Used
 
 #### Language
 
@@ -84,6 +84,8 @@ CREATE, UPDATE, DELETE implementation using [Airtable](https://airtable.com/deve
 
 #### Git and Github
 
+#### Visual Studio Code
+
 ## Screenshots
 
 - Popular Stocks
@@ -92,13 +94,13 @@ CREATE, UPDATE, DELETE implementation using [Airtable](https://airtable.com/deve
 
 - Stock Detail
   <!-- ![StockDetailTable](/src/assets/StockDetailTable.png){: width="100px"} -->
-  <img src="/src/assets/StockDetailTable.png" width="30%" height="30%"/>
+  <img src="/src/assets/StockDetailTable.png" width="40%" height="40%"/>
 
   - Saved Stocks
-    <img src="/src/assets/SavedStockList.png"  width="30%" height="30%"/>
+    <img src="/src/assets/SavedStockList.png"  width="50%" height="50%"/>
 
-  - MyWallet
-    <img src="/src/assets/MyWallet.png" width="30%" height="30%"/>
+  - My Wallet
+    <img src="/src/assets/MyWallet.png" width="50%" height="50%"/>
 
 ## Getting Started
 

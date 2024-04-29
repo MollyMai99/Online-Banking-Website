@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 
 export default function WalletPage() {
-  const [balance, setBalance] = useState([]);
+  const [balance, setBalance] = useState(0);
 
   useEffect(() => {
     async function loadWallet() {
@@ -21,14 +21,18 @@ export default function WalletPage() {
       const airtableResponse = await response.json();
       const balance = airtableResponse.records[0].fields.balance;
       //   console.log(balance);
-      setBalance(balance);
+      setBalance(parseFloat(balance));
       // console.log("savedList", savedList);
     }
     loadWallet();
   }, []);
 
   async function handleDeposit() {
-    console.log("deposit");
+    // console.log(typeof balance);
+    const newBalance = balance + 500;
+    setBalance(newBalance);
+    // console.log(typeof newBalance);
+
     const url = `https://api.airtable.com/v0/appu6JDxJ0kPqISCM/wallet`;
     const key =
       "patc1K5wmYJTJIkjP.febf10fd5d52335a34877cd8e8eb742c0d247d1e0e9b86fc70259d7a20c4e076";
@@ -37,7 +41,7 @@ export default function WalletPage() {
         {
           id: "rec258SyyTyYDcTUW",
           fields: {
-            balance: "1000",
+            balance: String(newBalance),
           },
         },
       ],
@@ -58,7 +62,7 @@ export default function WalletPage() {
   return (
     <>
       <h1>My Wallet</h1>
-      <p>Balance: {balance}</p>
+      <p>Balance: {balance.toFixed(2)}</p>
       <hr />
       {/* <p>Deposit Funds</p> */}
       <button onClick={() => handleDeposit()}>Deposit 500 SGD</button>

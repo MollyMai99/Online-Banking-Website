@@ -18,43 +18,44 @@ It is an online banking platform using React. Users can view popular stocks on t
 
 ## Wireframe
 
-- Navbar
+### Navbar
 
-- Home Page
+### Home Page
 
-  - Introduction
+- Introduction
 
-- Popular Stocks Page
+### Popular Stocks Page
 
-  - Stocks List(Name, Symbol)
+- Stocks List(Name, Symbol)
 
-    - Stock Detail Table
+  - Stock Detail Table
 
-      - Information: Symbol, Name, Price, Currency, Day High, Day Low, Day Change, Volume, Last Trade Time
-      - Fetch Stocks Information from API([Stockdata](https://api.stockdata.org))
+    - Information: Symbol, Name, Price, Currency, Day High, Day Low, Day Change, Volume, Last Trade Time
+    - Fetch Stocks Information from API([Stockdata](https://api.stockdata.org))
 
-    - Button: Click to Save
+  - Button: Click to Save
 
-      - Used online database(Airtable) for CREATE
+    - Used online database(Airtable) for CREATE
 
-    - Button: Convert Price to SGD
-      - Fetch Latest Currency Rate from API([open exchange rates](https://openexchangerates.org))
-    - Button: Last Stock
-    - Button: Next Stock
-    - Button: Back
+  - Button: Convert Price to SGD
+    - Fetch Latest Currency Rate from API([open exchange rates](https://openexchangerates.org))
+  - Button: Last Stock
+  - Button: Next Stock
+  - Button: Back
 
-- Saved Stocks Page
+### Saved Stocks Page
 
-  - Saved Stock List
-    - Fetch data from online database
-  - Button: Unsave
-    -Used online database for DELETE
+- Saved Stock List
+  - Fetch data from online database
+- Button: Unsave
+  -Used online database for DELETE
 
-- My Wallet Page
-  - Current Balance
-    - Fetch data from online database
-  - Button: Deposit
-    - Used online database for UPDATE
+### My Wallet Page
+
+- Current Balance
+  - Fetch data from online database
+- Button: Deposit
+  - Used online database for UPDATE
 
 ## Trello for Project Planning
 
@@ -64,7 +65,8 @@ https://trello.com/invite/b/btJqDKyi/ATTI389e3539f235535c56f0b3ebe256a519BCA9345
 
 ### Language
 
-- React(JavaScript):components, props, useStates, react router routes, useEffect, useParams, lifting state
+- React(JavaScript)
+  - Components, Props, useStates, React Router Routes, useEffect, useParams, Lifting State
 - HTML
 - CSS
 

@@ -88,11 +88,17 @@ CREATE, UPDATE, DELETE implementation using [Airtable](https://airtable.com/deve
 
 - Popular Stocks
   <!-- ![PopularStocks](/src/assets/PopularStocks.png){: width="100px"} -->
-  <img src="/src/assets/PopularStocks.png" alt="drawing" width="50%" height="50%"/>
+  <img src="/src/assets/PopularStocks.png"  width="50%" height="50%"/>
 
 - Stock Detail
   <!-- ![StockDetailTable](/src/assets/StockDetailTable.png){: width="100px"} -->
-  <img src="/src/assets/StockDetailTable.png" alt="drawing" width="30%" height="30%"/>
+  <img src="/src/assets/StockDetailTable.png" width="30%" height="30%"/>
+
+  - Saved Stocks
+    <img src="/src/assets/SavedStockList.png"  width="30%" height="30%"/>
+
+  - MyWallet
+    <img src="/src/assets/MyWallet.png" width="30%" height="30%"/>
 
 ## Getting Started
 

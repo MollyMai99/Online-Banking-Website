@@ -40,8 +40,7 @@ It is an online banking platform using React. Users can view popular stocks on t
 
 - Button: Convert Price to SGD
   - Fetch Latest Currency Rate from API([open exchange rates](https://openexchangerates.org))
-- Button: Last Stock
-- Button: Next Stock
+- Button: Last Stock & Next Stock
 - Button: Back
 
 ### Saved Stocks Page
@@ -58,7 +57,7 @@ It is an online banking platform using React. Users can view popular stocks on t
 - Button: Deposit
   - Used online database for UPDATE
 
-## Trello for Project Planning
+## Project Planning(Trello)
 
 https://trello.com/invite/b/btJqDKyi/ATTI389e3539f235535c56f0b3ebe256a519BCA9345F/online-banking-website
 

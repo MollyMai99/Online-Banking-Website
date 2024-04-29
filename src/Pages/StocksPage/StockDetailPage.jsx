@@ -1,14 +1,15 @@
 import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
-import popularStocksList from "./popularStocksList";
+// import popularStocksList from "./popularStocksList";
 import StockDetailTable from "./StockDetailTable";
 import ConvertToSGD from "./ConvertToSGD";
 import SaveStockToList from "./SaveStockToList";
+import HandelLastNext from "./HandelLastNext";
 
 export default function StockDetailPage() {
   const [stock, setStock] = useState([]);
-  const [lastSymbol, setLastSymbol] = useState("AAPL");
-  const [nextSymbol, setNextSymbol] = useState("INTC");
+  // const [lastSymbol, setLastSymbol] = useState("AAPL");
+  // const [nextSymbol, setNextSymbol] = useState("INTC");
   const [priceSGD, setPriceSGD] = useState();
   // const [priceUSD, setPriceUSD] = useState();
 
@@ -32,35 +33,36 @@ export default function StockDetailPage() {
       setStock(stockData);
     }
 
-    async function handelLastNext(symbol) {
-      const foundStock = popularStocksList.find(
-        (item) => item.symbol === symbol
-      );
-      const stockRank = foundStock.rank;
-      // console.log("rank", stockRank);
+    // async function handelLastNext(symbol) {
+    //   const foundStock = popularStocksList.find(
+    //     (item) => item.symbol === symbol
+    //   );
+    //   const stockRank = foundStock.rank;
+    //   // console.log("rank", stockRank);
 
-      const foundLastStock = popularStocksList.find(
-        (item) => item.rank === stockRank - 1
-      );
-      const last = foundLastStock.symbol;
-      setLastSymbol(last);
-      // console.log("lastsymbol", lastSymbol);
+    //   const foundLastStock = popularStocksList.find(
+    //     (item) => item.rank === stockRank - 1
+    //   );
+    //   const last = foundLastStock.symbol;
+    //   setLastSymbol(last);
+    //   // console.log("lastsymbol", lastSymbol);
 
-      const foundNextStock = popularStocksList.find(
-        (item) => item.rank === stockRank + 1
-      );
-      const next = foundNextStock.symbol;
-      setNextSymbol(next);
-      // console.log("nextsymbol", nextSymbol);
+    //   const foundNextStock = popularStocksList.find(
+    //     (item) => item.rank === stockRank + 1
+    //   );
+    //   const next = foundNextStock.symbol;
+    //   setNextSymbol(next);
+    //   // console.log("nextsymbol", nextSymbol);
 
-      // setStockRank(stockRank);
-      // console.log(stockRank);
-    }
+    //   // setStockRank(stockRank);
+    //   // console.log(stockRank);
+    // }
 
     loadStock();
-    handelLastNext(symbol);
+    // handelLastNext(symbol);
     setPriceSGD();
-  }, [symbol, lastSymbol, nextSymbol]);
+  }, [symbol]);
+  // }, [symbol, lastSymbol, nextSymbol]);
 
   // async function addSaveList(symbol) {
   //   // console.log("addsave", symbol);
@@ -134,14 +136,20 @@ export default function StockDetailPage() {
       {priceSGD && <p>Price in SGD: {priceSGD.toFixed(2)}</p>} */}
       {/* <br />
       <button onClick={() => addSaveList(stock.ticker)}>Click to Save</button> */}
+      <HandelLastNext
+        symbol={symbol}
+        // lastSymbol={lastSymbol}
+        // setLastSymbol={setLastSymbol}
+        // nextSymbol={nextSymbol}
+        // setNextSymbol={setNextSymbol}
+      />
 
-      <hr />
-      <button>
+      {/* <button>
         <Link to={`/stocks/${lastSymbol}`}>Last Stock: {lastSymbol}</Link>
       </button>
       <button>
         <Link to={`/stocks/${nextSymbol}`}>Next Stock: {nextSymbol}</Link>
-      </button>
+      </button> */}
       <br />
       <button>
         <Link to={`/stocks`}>Back</Link>

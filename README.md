@@ -92,7 +92,7 @@ CREATE, UPDATE, DELETE implementation using [Airtable](https://airtable.com/deve
 
 - Stock Detail
   <!-- ![StockDetailTable](/src/assets/StockDetailTable.png){: width="100px"} -->
-  <img src="/src/assets/StockDetailTable.png" alt="drawing" width="50%" height="50%"/>
+  <img src="/src/assets/StockDetailTable.png" alt="drawing" width="30%" height="30%"/>
 
 ## Getting Started
 

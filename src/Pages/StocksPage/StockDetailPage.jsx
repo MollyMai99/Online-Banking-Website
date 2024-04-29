@@ -2,12 +2,14 @@ import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import popularStocksList from "./popularStocksList";
 import StockDetailTable from "./StockDetailTable";
+import ConvertToSGD from "./ConvertToSGD";
 
 export default function StockDetailPage() {
   const [stock, setStock] = useState([]);
   const [lastSymbol, setLastSymbol] = useState("AAPL");
   const [nextSymbol, setNextSymbol] = useState("INTC");
   const [priceSGD, setPriceSGD] = useState();
+  // const [priceUSD, setPriceUSD] = useState();
 
   const { symbol } = useParams();
 
@@ -17,8 +19,8 @@ export default function StockDetailPage() {
         // "https://api.marketdata.app/v1/stocks/quotes/AAPL"
         // "https://api.stockdata.org/v1/data/quote?symbols=AAPL,TSLA,MSFT&api_token=jpqEm77zS2gsDoy1tifSsrgMvvpw3XS2zl6HHf2V"
 
-        `https://api.stockdata.org/v1/data/quote?symbols=${symbol}&api_token=jpqEm77zS2gsDoy1tifSsrgMvvpw3XS2zl6HHf2V`
-        // `https://api.stockdata.org/v1/data/quote?symbols=${symbol}&api_token=JgOAADvWjnurMD8QLuMAkLF5XlL7pD8jQUMCqXlC`
+        // `https://api.stockdata.org/v1/data/quote?symbols=${symbol}&api_token=jpqEm77zS2gsDoy1tifSsrgMvvpw3XS2zl6HHf2V`
+        `https://api.stockdata.org/v1/data/quote?symbols=${symbol}&api_token=JgOAADvWjnurMD8QLuMAkLF5XlL7pD8jQUMCqXlC`
         // `https://api.stockdata.org/v1/data/quote?symbols=${symbol}&api_token=SQ6IJwKFCd5COSkR2TSgYxA4RCV0fzStMaVwPFSB`
         // `https://api.stockdata.org/v1/data/quote?symbols=${symbol}&api_token=j6Hi7FQNMB8woaX3JlX1qoUpXAH4lb5cm3zoRYd7`
         // `https://api.stockdata.org/v1/data/quote?symbols=${symbol}&api_token=HSmh0vNFwQe7kQyxHJwJu3HLZvlOvJ1it02wnLC7`
@@ -97,28 +99,37 @@ export default function StockDetailPage() {
     }
   }
 
-  async function convertToSGD(priceUSD) {
-    const response = await fetch(
-      "https://openexchangerates.org/api/latest.json?app_id=0927c67d03d44781999f1ffb644c2947"
-    );
+  // async function convertToSGD(priceUSD) {
+  //   const response = await fetch(
+  //     "https://openexchangerates.org/api/latest.json?app_id=0927c67d03d44781999f1ffb644c2947"
+  //   );
 
-    const data = await response.json();
-    const rateSGD = data.rates.SGD;
-    console.log(rateSGD);
+  //   const data = await response.json();
+  //   const rateSGD = data.rates.SGD;
+  //   console.log(rateSGD);
 
-    // const rateSGD = 1.36;
-    const convertedPrice = priceUSD * rateSGD;
-    setPriceSGD(convertedPrice);
-  }
+  //   // const rateSGD = 1.36;
+  //   const convertedPrice = priceUSD * rateSGD;
+  //   setPriceSGD(convertedPrice);
+  // }
+
+  // const updatePriceUSD = (newPriceUSD) => {
+  //   setPriceUSD(newPriceUSD);
+  // };
 
   return (
     <>
       <h2>Stock Detail</h2>
       <StockDetailTable stock={stock} />
-      <button onClick={() => convertToSGD(stock.price)}>
+      <ConvertToSGD
+        priceUSD={stock.price}
+        priceSGD={priceSGD}
+        setPriceSGD={setPriceSGD}
+      />
+      {/* <button onClick={() => convertToSGD(stock.price)}>
         Convert Price to SGD
       </button>
-      {priceSGD && <p>Price in SGD: {priceSGD.toFixed(2)}</p>}
+      {priceSGD && <p>Price in SGD: {priceSGD.toFixed(2)}</p>} */}
       <br />
       <button onClick={() => addSaveList(stock.ticker)}>Click to Save</button>
       <hr />

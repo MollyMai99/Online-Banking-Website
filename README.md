@@ -86,6 +86,8 @@ CREATE, UPDATE, DELETE implementation using [Airtable](https://airtable.com/deve
 
 ## Screenshots
 
+![Introduction](/src/assets/Introduction.png)
+
 ## Getting Started
 
 [Vercel](https://online-banking-website-omega.vercel.app/)

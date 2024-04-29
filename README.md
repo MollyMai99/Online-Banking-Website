@@ -53,9 +53,9 @@ It is an online banking platform using React. Users can view popular stocks on t
 - Button: Deposit
   - Used online database for UPDATE
 
-## Project Planning(Trello)
+## Project Planning
 
-https://trello.com/invite/b/btJqDKyi/ATTI389e3539f235535c56f0b3ebe256a519BCA9345F/online-banking-website
+[Trello](https://trello.com/invite/b/btJqDKyi/ATTI389e3539f235535c56f0b3ebe256a519BCA9345F/online-banking-website)
 
 ## Technologies Used
 
@@ -86,9 +86,9 @@ CREATE, UPDATE, DELETE implementation using [Airtable](https://airtable.com/deve
 
 ## Screenshots
 
-## Getting Started (Vercel)
+## Getting Started
 
-https://online-banking-website-omega.vercel.app/
+[Vercel](https://online-banking-website-omega.vercel.app/)
 
 ## Next Steps
 

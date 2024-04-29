@@ -30,14 +30,10 @@ It is an online banking platform using React. Users can view popular stocks on t
 ### Stock Detail Page
 
 - Detail Table
-
   - Information: Symbol, Name, Price, Currency, Day High, Day Low, Day Change, Volume, Last Trade Time
   - Fetch Stocks Information from API([Stockdata](https://api.stockdata.org))
-
 - Button: Click to Save
-
   - Used online database(Airtable) for CREATE
-
 - Button: Convert Price to SGD
   - Fetch Latest Currency Rate from API([open exchange rates](https://openexchangerates.org))
 - Button: Last Stock & Next Stock
@@ -83,8 +79,8 @@ Used two API:
 
 CREATE, UPDATE, DELETE implementation using [Airtable](https://airtable.com/developers). Used two tables to store:
 
-1. Save stocks list
-2. Current balance
+1.  Save stocks list
+2.  Current balance
 
 ### Git and Github
 

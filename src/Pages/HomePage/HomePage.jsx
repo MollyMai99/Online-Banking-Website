@@ -9,7 +9,7 @@ export default function HomePage() {
         trust while navigating the evolving landscape of global finance,
         ensuring prosperity for all stakeholders.
       </p>
-      <p>Feature Set(Link to each page)</p>
+      {/* <p>Feature Set(Link to each page)</p> */}
     </>
   );
 }

@@ -16,6 +16,9 @@ export default function Navbar() {
         <li>
           <Link to={`/savedstocks`}>Saved Stocks</Link>
         </li>
+        <li>
+          <Link to={`/wallet`}>My Wallet</Link>
+        </li>
       </ul>
     </>
   );

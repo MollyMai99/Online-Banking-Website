@@ -86,8 +86,10 @@ CREATE, UPDATE, DELETE implementation using [Airtable](https://airtable.com/deve
 
 ## Screenshots
 
-![Introduction](/src/assets/Introduction.png)
+Popular Stocks
 ![PopularStocks](/src/assets/PopularStocks.png)
+
+Stock Detail
 ![StockDetailTable](/src/assets/StockDetailTable.png)
 
 ## Getting Started

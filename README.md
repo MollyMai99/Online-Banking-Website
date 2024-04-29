@@ -89,15 +89,19 @@ CREATE, UPDATE, DELETE implementation using [Airtable](https://airtable.com/deve
 ## Screenshots
 
 - Popular Stocks
+  <br/>
   <img src="/src/assets/PopularStocks.png"  width="50%" height="50%"/>
 
 - Stock Detail
+  <br/>
   <img src="/src/assets/StockDetailTable.png" width="40%" height="40%"/>
 
   - Saved Stocks
+    <br/>
     <img src="/src/assets/SavedStockList.png"  width="50%" height="50%"/>
 
   - My Wallet
+    <br/>
     <img src="/src/assets/MyWallet.png" width="50%" height="50%"/>
 
 ## Getting Started

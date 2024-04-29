@@ -44,7 +44,7 @@ It is an online banking platform using React. Users can view popular stocks on t
 - Saved Stock List
   - Fetch data from online database
 - Button: Unsave
-  -Used online database for DELETE
+  - Used online database for DELETE
 
 ### My Wallet Page
 
@@ -59,14 +59,14 @@ https://trello.com/invite/b/btJqDKyi/ATTI389e3539f235535c56f0b3ebe256a519BCA9345
 
 ## Technologies Used
 
-### Language
+#### Language
 
 - React(JavaScript)
   - Components, Props, useStates, React Router Routes, useEffect, useParams, Lifting State
 - HTML
 - CSS
 
-### API
+#### API
 
 Used two API:
 
@@ -75,14 +75,14 @@ Used two API:
 2. Fetch latest currency rates:
    [open exchange rates](https://openexchangerates.org)
 
-### Online Database
+#### Online Database
 
 CREATE, UPDATE, DELETE implementation using [Airtable](https://airtable.com/developers). Used two tables to store:
 
 1.  Save stocks list
 2.  Current balance
 
-### Git and Github
+#### Git and Github
 
 ## Screenshots
 

@@ -35,15 +35,18 @@ export default function StockDetailPage() {
     <>
       <h2>Stock Detail</h2>
       <StockDetailTable stock={stock} />
+      <br />
+      <SaveStockToList symbol={stock.ticker} />
+      <br />
       <ConvertToSGD
         priceUSD={stock.price}
         priceSGD={priceSGD}
         setPriceSGD={setPriceSGD}
       />
-      <SaveStockToList symbol={stock.ticker} />
+      <br />
       <HandelLastNext symbol={symbol} />
       <br />
-      <button>
+      <button style={{ background: "white" }}>
         <Link to={`/stocks`}>Back</Link>
       </button>
     </>

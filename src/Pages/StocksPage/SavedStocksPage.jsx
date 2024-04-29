@@ -33,7 +33,7 @@ export default function SavedStocksPage() {
 
   return (
     <>
-      <p>Stocks you saved:</p>
+      <h1>Saved Stocks List</h1>
       <UnsaveService
         savedList={savedList}
         unsaveStockState={unsaveStockState}

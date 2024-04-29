@@ -4,11 +4,11 @@ export default function Navbar() {
   return (
     <>
       <h1>
-        <Link to={`/home`}>Stocks Info</Link>
+        <Link to={`/home`}>BBS</Link>
       </h1>
       <ul>
         <li>
-          <Link to={`/home`}>Company Background</Link>
+          <Link to={`/home`}>Introduction</Link>
         </li>
         <li>
           <Link to={`/stocks`}>Popular Stocks</Link>
@@ -20,6 +20,7 @@ export default function Navbar() {
           <Link to={`/wallet`}>My Wallet</Link>
         </li>
       </ul>
+      <hr />
     </>
   );
 }

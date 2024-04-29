@@ -57,7 +57,7 @@ export default function WalletPage() {
   return (
     <>
       <h1>My Wallet</h1>
-      <p>Balance: {balance.toFixed(2)}</p>
+      <h3>Current Balance :{balance.toFixed(2)} SGD </h3>
       <hr />
       <button onClick={() => handleDeposit()}>Deposit 500 SGD</button>
     </>

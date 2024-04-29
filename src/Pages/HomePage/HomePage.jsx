@@ -1,7 +1,7 @@
 export default function HomePage() {
   return (
     <>
-      <h1>Bank Background</h1>
+      <h1>Introduction</h1>
       <p>
         Established in 2024, BBS has been a cornerstone of financial stability,
         offering a spectrum of services tailored to meet the diverse needs of
@@ -9,7 +9,6 @@ export default function HomePage() {
         trust while navigating the evolving landscape of global finance,
         ensuring prosperity for all stakeholders.
       </p>
-      {/* <p>Feature Set(Link to each page)</p> */}
     </>
   );
 }

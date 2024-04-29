@@ -31,11 +31,10 @@ export default function HandelLastNext({ symbol }) {
 
   return (
     <>
-      <hr />
-      <button>
+      <button style={{ background: "white" }}>
         <Link to={`/stocks/${lastSymbol}`}>Last Stock: {lastSymbol}</Link>
       </button>
-      <button>
+      <button style={{ background: "white" }}>
         <Link to={`/stocks/${nextSymbol}`}>Next Stock: {nextSymbol}</Link>
       </button>
     </>

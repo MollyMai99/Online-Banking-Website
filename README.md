@@ -6,7 +6,6 @@ It is an online banking platform using React. Users can view popular stocks on t
 
 ## User Stories
 
-- As a user, I can learn about the business background from introduction part.
 - As a user, I can check popular stocks list.
 - As a user, I can check latest price of the stock I want.
 - As a user, I can save the stock I like.
@@ -28,20 +27,22 @@ It is an online banking platform using React. Users can view popular stocks on t
 
 - Stocks List(Name, Symbol)
 
-  - Stock Detail Table
+### Stock Detail Page
 
-    - Information: Symbol, Name, Price, Currency, Day High, Day Low, Day Change, Volume, Last Trade Time
-    - Fetch Stocks Information from API([Stockdata](https://api.stockdata.org))
+- Detail Table
 
-  - Button: Click to Save
+  - Information: Symbol, Name, Price, Currency, Day High, Day Low, Day Change, Volume, Last Trade Time
+  - Fetch Stocks Information from API([Stockdata](https://api.stockdata.org))
 
-    - Used online database(Airtable) for CREATE
+- Button: Click to Save
 
-  - Button: Convert Price to SGD
-    - Fetch Latest Currency Rate from API([open exchange rates](https://openexchangerates.org))
-  - Button: Last Stock
-  - Button: Next Stock
-  - Button: Back
+  - Used online database(Airtable) for CREATE
+
+- Button: Convert Price to SGD
+  - Fetch Latest Currency Rate from API([open exchange rates](https://openexchangerates.org))
+- Button: Last Stock
+- Button: Next Stock
+- Button: Back
 
 ### Saved Stocks Page
 

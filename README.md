@@ -55,6 +55,7 @@ It is an online banking platform using React. Users can view popular stocks on t
 
 ## Project Planning
 
+Public Board:
 [Trello](https://trello.com/invite/b/btJqDKyi/ATTI389e3539f235535c56f0b3ebe256a519BCA9345F/online-banking-website)
 
 ## Technologies and Tools Used

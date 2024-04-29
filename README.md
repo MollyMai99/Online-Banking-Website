@@ -83,7 +83,9 @@ CREATE, UPDATE, DELETE implementation using [Airtable](https://airtable.com/deve
 1.  Save stocks list
 2.  Current balance
 
-#### Online Deployment (Vercel)
+#### Online Deployment
+
+Vercel
 
 #### Git and Github
 

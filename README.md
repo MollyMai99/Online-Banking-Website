@@ -2,143 +2,100 @@
 
 ## Introduction
 
-An online banking web APP using React.
+It is an online banking platform using React. Users can view popular stocks on the website and check the latest price information. They can also save or unsave stocks based on their preferences. Additionally, the website provides a wallet deposit feature for users to add funds and view their wallet balance.
+
+## User Stories
+
+- As a user, I can learn about the business background from introduction part.
+- As a user, I can check popular stocks list.
+- As a user, I can check latest price of the stock I want.
+- As a user, I can save the stock I like.
+- As a user, I can convert the price to SGD.
+- As a user, I can easily turn to last stock or next stock in the list.
+- As a user, I can check all the stocks saved by myself.
+- As a user, I can deposit funds into my wallet.
+- As a user, I can check the balance of my wallet.
+
+## Wireframe
+
+- Navbar
+
+- Home Page
+
+  - Introduction
+
+- Popular Stocks Page
+
+  - Stocks List(Name, Symbol)
+
+    - Stock Detail Table
+
+      - Information: Symbol, Name, Price, Currency, Day High, Day Low, Day Change, Volume, Last Trade Time
+      - Fetch Stocks Information from API([Stockdata](https://api.stockdata.org))
+
+    - Button: Click to Save
+
+      - Used online database(Airtable) for CREATE
+
+    - Button: Convert Price to SGD
+      - Fetch Latest Currency Rate from API([open exchange rates](https://openexchangerates.org))
+    - Button: Last Stock
+    - Button: Next Stock
+    - Button: Back
+
+- Saved Stocks Page
+
+  - Saved Stock List
+    - Fetch data from online database
+  - Button: Unsave
+    -Used online database for DELETE
+
+- My Wallet Page
+  - Current Balance
+    - Fetch data from online database
+  - Button: Deposit
+    - Used online database for UPDATE
+
+## Trello for Project Planning
+
+https://trello.com/invite/b/btJqDKyi/ATTI389e3539f235535c56f0b3ebe256a519BCA9345F/online-banking-website
+
+## Technologies Used
+
+### Language
+
+- React(JavaScript):components, props, useStates, react router routes, useEffect, useParams, lifting state
+- HTML
+- CSS
+
+### API
+
+Used two API:
+
+1. Fetch latest stocks data:
+   [Stockdata](https://api.stockdata.org)
+2. Fetch latest currency rates:
+   [open exchange rates](https://openexchangerates.org)
+
+### Online Database
+
+CREATE, UPDATE, DELETE implementation using [Airtable](https://airtable.com/developers). Used two tables to store:
+
+1. Save stocks list
+2. Current balance
+
+### Git and Github
+
+## Screenshots
 
 ## Getting Started (Vercel)
 
 https://online-banking-website-omega.vercel.app/
 
-## User Stories
-
-- As a user, I can learn the background of the bank through homepage;
-- As a user, I can click into the page I want on homepage;
-
-- As a user, I can check the latest price of one specific stock on StocksPage;
-
-- As a user, I can apply for a credit card on CardPAge by filling the form;
-- As a user, I can check the submitted form and am able update or delete the record on CardPAge.
-
-- As a user, I can check the latest news of one specific stock on NewsPage;
-
-## API
-
-https://api.stockdata.org/v1/data/quote?symbols=AAPL&api_token=
-
-## Wireframe
-
-\* HomePage
-
-- Bank Background
-- Feature Set(Link to each page)
-
-\* StocksPage
-
-- Navbar (Router)
-
-- TopStocksPage
-  Top 3 Popular Stocks (Airtable -> store 3 stocks)
-  Stock name -> link to StockDetailPage (API, Lifting States)
-  Save Button -> save/unsave (Airtable -> store saved stocks)
-
-- StockDetailPage
-
-- SavedStocksPage
-
-## Trello
-
-https://trello.com/invite/b/btJqDKyi/ATTI389e3539f235535c56f0b3ebe256a519BCA9345F/online-banking-website
-
-## Airtable
-
-- Stores:
-
-## Bruno
-
-## Screenshots
-
-## Technologies Used
-
 ## Next Steps
 
-- Financial Goal Calculator
-- Foreign Exchange(fetch latest rate from API)
-
-------------------BACK UP README-----------------------------
-
-# Online-Banking-Website
-
-## Introduction
-
-An online banking web APP using React.
-Our app allows users to learn the background of the bank, apply for credit cards, check latest news and stocks price.
-
-## Getting Started (Vercel)
-
-https://online-banking-website-omega.vercel.app/
-
-## User Stories
-
-- As a user, I can learn the background of the bank through homepage;
-- As a user, I can click into the page I want on homepage;
-
-- As a user, I can apply for a credit card on CardPAge by filling the form;
-- As a user, I can check the submitted form and am able update or delete the record on CardPAge.
-
-- As a user, I can check the latest news of one specific stock on NewsPage;
-
-- As a user, I can check the latest price of one specific stock on StocksPage;
-
-## API
-
-https://api.marketdata.app/
-
-URL
-
-https://api.marketdata.app/v1/stocks/quotes/AAPL
-https://api.marketdata.app/v1/stocks/quotes/AAPL/?dateformat=timestamp
-https://api.marketdata.app/v1/stocks/news/AAPL/?dateformat=timestamp&limit=2
-
-## Wireframe
-
-\* HomePage
-
-- Bank Background
-- Feature Set(Link to each page)
-
-\* CardPage
-
-- Navbar
-- Apply for Credit Card
-- Form([Name, Birthdate, IC No.]; CREATE/UPDATE/DELETE; data store in Airtable; input validation; submit form)
-- Check Submitted Record(lifting state?)
-
-\* NewsPage
-
-- Navbar
-- Latest News(fetch from API)
-  https://api.marketdata.app/v1/stocks/news/AAPL/?dateformat=timestamp&limit=2
-
-\* StocksPage
-
-- Navbar
-- Latest Price(fetch from API)
-  https://api.marketdata.app/v1/stocks/quotes/AAPL/?dateformat=timestamp
-
-## Trello
-
-https://trello.com/invite/b/btJqDKyi/ATTI389e3539f235535c56f0b3ebe256a519BCA9345F/online-banking-website
-
-## Airtable
-
-- Stores: cards application information(CREATE, UPDATE, DELETE)
-
-## Bruno??
-
-## Screenshots
-
-## Technologies Used
-
-## Next Steps
-
-- Financial Goal Calculator
-- Foreign Exchange(fetch latest rate from API)
+- User can input the amount of deposit funds
+- User can check latest news of stocks market
+- CSS and Styling
+- Add loading state
+- Responsive Design

@@ -89,11 +89,9 @@ CREATE, UPDATE, DELETE implementation using [Airtable](https://airtable.com/deve
 ## Screenshots
 
 - Popular Stocks
-  <!-- ![PopularStocks](/src/assets/PopularStocks.png){: width="100px"} -->
   <img src="/src/assets/PopularStocks.png"  width="50%" height="50%"/>
 
 - Stock Detail
-  <!-- ![StockDetailTable](/src/assets/StockDetailTable.png){: width="100px"} -->
   <img src="/src/assets/StockDetailTable.png" width="40%" height="40%"/>
 
   - Saved Stocks

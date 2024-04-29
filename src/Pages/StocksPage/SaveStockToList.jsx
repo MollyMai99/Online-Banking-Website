@@ -34,6 +34,5 @@ export default function SaveStockToList({ symbol }) {
     }
   }
 
-  // addSaveList(symbol);
   return <button onClick={() => addSaveList(symbol)}>Click to Save</button>;
 }

@@ -2,13 +2,7 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import popularStocksList from "./popularStocksList";
 
-export default function HandelLastNext({
-  symbol,
-  //   lastSymbol,
-  //   setLastSymbol,
-  //   nextSymbol,
-  //   setNextSymbol,
-}) {
+export default function HandelLastNext({ symbol }) {
   const [lastSymbol, setLastSymbol] = useState("AAPL");
   const [nextSymbol, setNextSymbol] = useState("INTC");
 

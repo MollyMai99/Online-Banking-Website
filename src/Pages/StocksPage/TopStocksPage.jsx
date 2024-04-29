@@ -3,10 +3,7 @@ import popularStocksList from "./popularStocksList";
 import { useState } from "react";
 
 export default function TopStocksPage() {
-  //   console.log("top", stocks);
-  // console.log("1", popularStocksList[0].symbol);
   const [symbol, setSymbol] = useState("");
-  // setSymbol("AAPL");
 
   async function getSymbol(symbol) {
     setSymbol(symbol);

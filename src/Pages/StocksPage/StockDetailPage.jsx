@@ -3,6 +3,7 @@ import { Link, useParams } from "react-router-dom";
 import popularStocksList from "./popularStocksList";
 import StockDetailTable from "./StockDetailTable";
 import ConvertToSGD from "./ConvertToSGD";
+import SaveStockToList from "./SaveStockToList";
 
 export default function StockDetailPage() {
   const [stock, setStock] = useState([]);
@@ -61,43 +62,43 @@ export default function StockDetailPage() {
     setPriceSGD();
   }, [symbol, lastSymbol, nextSymbol]);
 
-  async function addSaveList(symbol) {
-    // console.log("addsave", symbol);
+  // async function addSaveList(symbol) {
+  //   // console.log("addsave", symbol);
 
-    const url = "https://api.airtable.com/v0/appu6JDxJ0kPqISCM/Table%201";
-    const key =
-      "patc1K5wmYJTJIkjP.febf10fd5d52335a34877cd8e8eb742c0d247d1e0e9b86fc70259d7a20c4e076";
-    const addSymbolObj = {
-      records: [
-        {
-          fields: {
-            Symbol: symbol,
-          },
-        },
-      ],
-    };
+  //   const url = "https://api.airtable.com/v0/appu6JDxJ0kPqISCM/Table%201";
+  //   const key =
+  //     "patc1K5wmYJTJIkjP.febf10fd5d52335a34877cd8e8eb742c0d247d1e0e9b86fc70259d7a20c4e076";
+  //   const addSymbolObj = {
+  //     records: [
+  //       {
+  //         fields: {
+  //           Symbol: symbol,
+  //         },
+  //       },
+  //     ],
+  //   };
 
-    const options = {
-      method: "POST", // Change method to POST
-      headers: {
-        Authorization: `Bearer ${key}`,
-        "Content-Type": "application/json", // Specify the content type
-      },
-      body: JSON.stringify(addSymbolObj),
-    };
-    // console.log(addSymbolObj); // Add request body if needed
+  //   const options = {
+  //     method: "POST", // Change method to POST
+  //     headers: {
+  //       Authorization: `Bearer ${key}`,
+  //       "Content-Type": "application/json", // Specify the content type
+  //     },
+  //     body: JSON.stringify(addSymbolObj),
+  //   };
+  //   // console.log(addSymbolObj); // Add request body if needed
 
-    try {
-      const response = await fetch(url, options);
-      if (!response.ok) {
-        throw new Error("Failed to add symbol to save list");
-      }
-      const data = await response.json();
-      console.log("data", data); // Handle response data as needed
-    } catch (error) {
-      console.error("Error adding symbol to save list:", error);
-    }
-  }
+  //   try {
+  //     const response = await fetch(url, options);
+  //     if (!response.ok) {
+  //       throw new Error("Failed to add symbol to save list");
+  //     }
+  //     const data = await response.json();
+  //     console.log("data", data); // Handle response data as needed
+  //   } catch (error) {
+  //     console.error("Error adding symbol to save list:", error);
+  //   }
+  // }
 
   // async function convertToSGD(priceUSD) {
   //   const response = await fetch(
@@ -126,12 +127,14 @@ export default function StockDetailPage() {
         priceSGD={priceSGD}
         setPriceSGD={setPriceSGD}
       />
+      <SaveStockToList symbol={stock.ticker} />
       {/* <button onClick={() => convertToSGD(stock.price)}>
         Convert Price to SGD
       </button>
       {priceSGD && <p>Price in SGD: {priceSGD.toFixed(2)}</p>} */}
-      <br />
-      <button onClick={() => addSaveList(stock.ticker)}>Click to Save</button>
+      {/* <br />
+      <button onClick={() => addSaveList(stock.ticker)}>Click to Save</button> */}
+
       <hr />
       <button>
         <Link to={`/stocks/${lastSymbol}`}>Last Stock: {lastSymbol}</Link>

@@ -31,6 +31,17 @@ export default function StockDetailPage() {
     setPriceSGD();
   }, [symbol]);
 
+  const convertToSGD = async () => {
+    const response = await fetch(
+      "https://openexchangerates.org/api/latest.json?app_id=0927c67d03d44781999f1ffb644c2947"
+    );
+    const data = await response.json();
+    const rateSGD = data.rates.SGD;
+
+    const convertedPrice = stock.price * rateSGD;
+    setPriceSGD(convertedPrice);
+  };
+
   return (
     <>
       <h2>Stock Detail</h2>
@@ -38,7 +49,8 @@ export default function StockDetailPage() {
       <br />
       <SaveStockToList symbol={stock.ticker} />
       <ConvertToSGD
-        priceUSD={stock.price}
+        // priceUSD={stock.price}
+        convertToSGD={convertToSGD}
         priceSGD={priceSGD}
         setPriceSGD={setPriceSGD}
       />

@@ -2,13 +2,14 @@ import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 
 import StockDetailTable from "./StockDetailTable";
-import ConvertToSGD from "./ConvertToSGD";
 import SaveStockToList from "./SaveStockToList";
 import HandelLastNext from "./HandelLastNext";
+// import ConvertToSGD from "./ConvertToSGD";
 
 export default function StockDetailPage() {
   const [stock, setStock] = useState([]);
   const [priceSGD, setPriceSGD] = useState();
+  // const [showSGD, setShowSGD] = useState(false);
 
   const { symbol } = useParams();
 
@@ -28,7 +29,7 @@ export default function StockDetailPage() {
     }
 
     loadStock();
-    setPriceSGD();
+    setPriceSGD(null);
   }, [symbol]);
 
   const convertToSGD = async () => {
@@ -37,7 +38,6 @@ export default function StockDetailPage() {
     );
     const data = await response.json();
     const rateSGD = data.rates.SGD;
-
     const convertedPrice = stock.price * rateSGD;
     setPriceSGD(convertedPrice);
   };
@@ -48,12 +48,14 @@ export default function StockDetailPage() {
       <StockDetailTable stock={stock} />
       <br />
       <SaveStockToList symbol={stock.ticker} />
-      <ConvertToSGD
+      <button onClick={convertToSGD}>Convert Price to SGD</button>
+      {priceSGD && <p>Price in SGD: {priceSGD.toFixed(2)}</p>}
+      {/* <ConvertToSGD
         // priceUSD={stock.price}
         convertToSGD={convertToSGD}
         priceSGD={priceSGD}
         setPriceSGD={setPriceSGD}
-      />
+      /> */}
       <br />
       <HandelLastNext symbol={symbol} />
       <br />

@@ -4,12 +4,10 @@ import { Link, useParams } from "react-router-dom";
 import StockDetailTable from "./StockDetailTable";
 import SaveStockToList from "./SaveStockToList";
 import HandelLastNext from "./HandelLastNext";
-// import ConvertToSGD from "./ConvertToSGD";
 
 export default function StockDetailPage() {
   const [stock, setStock] = useState([]);
   const [priceSGD, setPriceSGD] = useState();
-  // const [showSGD, setShowSGD] = useState(false);
 
   const { symbol } = useParams();
 
@@ -50,12 +48,6 @@ export default function StockDetailPage() {
       <SaveStockToList symbol={stock.ticker} />
       <button onClick={convertToSGD}>Convert Price to SGD</button>
       {priceSGD && <p>Price in SGD: {priceSGD.toFixed(2)}</p>}
-      {/* <ConvertToSGD
-        // priceUSD={stock.price}
-        convertToSGD={convertToSGD}
-        priceSGD={priceSGD}
-        setPriceSGD={setPriceSGD}
-      /> */}
       <br />
       <HandelLastNext symbol={symbol} />
       <br />
